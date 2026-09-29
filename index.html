@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>CBSystem</title>
+<meta name="theme-color" content="#0a0a0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--card:#1e1e2e;--line:#2a2a40;--text:#f0f0f8;--mute:#9090b0;--shop:#ff6b35;--rest:#2dd4a0}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{min-height:100%;background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;min-height:100dvh;padding:32px 20px;gap:36px;background-image:radial-gradient(ellipse at 30% 30%,rgba(255,107,53,.09),transparent 60%)}
+h1{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;font-size:clamp(3rem,10vw,5rem);letter-spacing:6px;line-height:1;color:var(--shop);text-align:center}
+.sub{color:var(--mute);text-align:center;margin-top:10px;font-size:1rem}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%;max-width:720px}
+.choice{display:flex;flex-direction:column;gap:8px;padding:36px 24px;background:var(--card);border:2px solid var(--line);border-radius:20px;text-decoration:none;color:var(--text);text-align:center;transition:border-color .2s,transform .2s}
+.choice:hover,.choice:focus-visible{transform:translateY(-3px);outline:none}
+.choice.shop:hover,.choice.shop:focus-visible{border-color:var(--shop)}
+.choice.rest:hover,.choice.rest:focus-visible{border-color:var(--rest)}
+.choice .icon{font-size:3rem}
+.choice .name{font-family:'Bebas Neue',Impact,sans-serif;font-size:2.2rem;letter-spacing:3px}
+.choice .desc{color:var(--mute);font-size:.9rem}
+.note{color:var(--mute);font-size:.85rem;text-align:center;max-width:420px;line-height:1.5}
+@media (max-width:560px){.choices{grid-template-columns:1fr}.choice{padding:26px 20px}}
+@media (prefers-reduced-motion:reduce){.choice{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1>CBSystem</h1>
+  <p class="sub">Choose your system</p>
+</header>
+<main class="choices">
+  <a class="choice shop" href="https://shop.cbsystem.co.uk">
+    <span class="icon" aria-hidden="true">🛒</span>
+    <span class="name">Shop</span>
+    <span class="desc">Supermarket and retail till</span>
+  </a>
+  <a class="choice rest" href="https://restaurant.cbsystem.co.uk">
+    <span class="icon" aria-hidden="true">🍽️</span>
+    <span class="name">Restaurant</span>
+    <span class="desc">Restaurant and bar till</span>
+  </a>
+</main>
+<p class="note">After you choose, enter your email address. We will send you a 6-digit code to sign in.</p>
+</body>
+</html>
