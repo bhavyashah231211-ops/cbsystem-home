@@ -1,49 +1,409 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>CBSystem</title>
-<meta name="theme-color" content="#0a0a0f">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CBSystem | POS, Payroll, Clock-in and Business Software for UK Businesses</title>
+<meta name="description" content="CBSystem provides shop and restaurant POS, payroll, staff clock-in, holiday management and pet care software for UK businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0f;--card:#1e1e2e;--line:#2a2a40;--text:#f0f0f8;--mute:#9090b0;--shop:#ff6b35;--rest:#2dd4a0}
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{min-height:100%;background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif}
-body{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;min-height:100dvh;padding:32px 20px;gap:36px;background-image:radial-gradient(ellipse at 30% 30%,rgba(255,107,53,.09),transparent 60%)}
-h1{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;font-size:clamp(3rem,10vw,5rem);letter-spacing:6px;line-height:1;color:var(--shop);text-align:center}
-.sub{color:var(--mute);text-align:center;margin-top:10px;font-size:1rem}
-.choices{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%;max-width:720px}
-.choice{display:flex;flex-direction:column;gap:8px;padding:36px 24px;background:var(--card);border:2px solid var(--line);border-radius:20px;text-decoration:none;color:var(--text);text-align:center;transition:border-color .2s,transform .2s}
-.choice:hover,.choice:focus-visible{transform:translateY(-3px);outline:none}
-.choice.shop:hover,.choice.shop:focus-visible{border-color:var(--shop)}
-.choice.rest:hover,.choice.rest:focus-visible{border-color:var(--rest)}
-.choice .icon{font-size:3rem}
-.choice .name{font-family:'Bebas Neue',Impact,sans-serif;font-size:2.2rem;letter-spacing:3px}
-.choice .desc{color:var(--mute);font-size:.9rem}
-.note{color:var(--mute);font-size:.85rem;text-align:center;max-width:420px;line-height:1.5}
-@media (max-width:560px){.choices{grid-template-columns:1fr}.choice{padding:26px 20px}}
-@media (prefers-reduced-motion:reduce){.choice{transition:none}}
+:root{--bg:#0a0a0f;--card:#1e1e2e;--line:#2a2a40;--text:#f0f0f8;--mut:#9a9ab8;--acc:#ff6b35}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",system-ui,Arial,sans-serif;background:radial-gradient(900px 500px at 20% -5%,#2a140d,transparent),var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid #ffd700;outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.logo{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:.04em}
+header{background:#12121ce6;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-size:2rem;text-decoration:none;color:var(--acc)}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-size:.95rem;font-weight:500;color:#c8c8e0}
+nav a:hover{color:#fff}
+.btn{display:inline-block;padding:12px 24px;border-radius:12px;font:700 .95rem "DM Sans",sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.p{background:var(--acc);color:#fff}
+.btn.p:hover{background:#ff8557}
+.btn.o{border-color:var(--c,#fff);color:var(--c,#fff);background:transparent}
+.btn.o:hover{background:var(--c,#fff);color:#0a0a0f}
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+h1{font-size:clamp(3rem,7vw,5.6rem);line-height:.95}
+h1 em{font-style:normal;color:var(--acc)}
+.lead{font-size:1.15rem;color:#c3c3dc;margin:22px 0 28px;max-width:34em}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.from{margin-top:18px;color:var(--mut)}
+.from b{color:#ffd700}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tile{background:var(--card);border:2px solid var(--c);border-radius:20px;padding:18px 14px;text-align:center;text-decoration:none;transition:transform .15s}
+.tile span{font-size:1.9rem;display:block}
+.tile b{font:1.4rem "Bebas Neue",sans-serif;letter-spacing:.06em;display:block}
+.tile small{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.tile:hover{transform:translateY(-3px)}
+section{padding:72px 0}
+h2.s{font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1;margin-bottom:12px}
+.sub{color:var(--mut);max-width:40em;margin-bottom:40px}
+.prod{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center;background:var(--card);border:2px solid var(--c);border-radius:26px;padding:34px;margin-bottom:34px}
+.prod:nth-of-type(even) .txt{order:2}
+.prod .ic{font-size:2.2rem}
+.prod h3{font-size:2.4rem;line-height:1;color:var(--c);margin:6px 0 8px}
+.prod .tg{font-weight:700;margin-bottom:10px}
+.prod p{color:#c3c3dc;margin-bottom:16px}
+.feat{list-style:none;padding:0;display:grid;gap:7px;margin-bottom:22px;font-size:.94rem}
+.feat li{padding-left:24px;position:relative}
+.feat li::before{content:"";position:absolute;left:0;top:.5em;width:12px;height:12px;border-radius:50%;background:var(--c)}
+.pl{font-size:1.05rem;margin-bottom:14px}
+.pl b{font:2rem "Bebas Neue",sans-serif;letter-spacing:.04em;color:var(--c)}
+.frame{background:#0a0a0f;border:2px solid var(--line);border-radius:14px;overflow:hidden}
+.frame .bar{display:flex;gap:6px;padding:9px 12px;background:#12121c}
+.frame .bar i{width:10px;height:10px;border-radius:50%;background:#4a4a66}
+.frame .im{aspect-ratio:8/5;background:#12121c;position:relative}
+.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.pv{position:absolute;top:10px;right:10px;background:#000c;color:#ffd700;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em}
+.cap{display:flex;align-items:center;gap:10px;margin-top:12px}
+.cap p{flex:1;margin:0;font-size:.92rem;color:#c3c3dc}
+.arr{width:38px;height:38px;border-radius:50%;border:2px solid var(--c);background:transparent;color:var(--c);font-size:1.1rem;cursor:pointer}
+.arr:hover{background:var(--c);color:#0a0a0f}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:10px}
+.dots button{width:10px;height:10px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}
+.dots button.on{background:var(--c)}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+.why div{border-left:4px solid var(--acc);padding-left:16px}
+.why h3{font-size:1.7rem}
+.why p{color:var(--mut);font-size:.95rem}
+.alt{background:#0d0d14;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tog{display:inline-flex;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:4px;margin-bottom:30px}
+.tog button{border:0;background:transparent;color:var(--text);font:700 .95rem "DM Sans",sans-serif;padding:10px 24px;border-radius:10px;cursor:pointer}
+.tog button[aria-pressed=true]{background:var(--acc)}
+.plans{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.plan{background:var(--card);border:2px solid var(--c);border-radius:22px;padding:26px 22px;display:flex;flex-direction:column}
+.plan h3{font-size:1.9rem;color:var(--c)}
+.plan .pr{font:3.2rem/1.1 "Bebas Neue",sans-serif;letter-spacing:.03em}
+.plan .u{color:var(--mut);font-size:.88rem;margin-bottom:14px;min-height:2.6em}
+.plan ul{padding-left:18px;font-size:.92rem;margin-bottom:20px;flex:1;color:#c3c3dc}
+.fine{color:var(--mut);font-size:.88rem;margin-top:22px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;list-style:none;padding:0;counter-reset:s}
+.steps li{counter-increment:s;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:22px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--acc);font:1.3rem "Bebas Neue";margin-bottom:10px}
+.steps b{display:block}
+.steps span{color:var(--mut);font-size:.94rem}
+form{display:grid;gap:14px;max-width:560px}
+label{display:grid;gap:5px;font-weight:500;font-size:.92rem}
+input,textarea,select{font:inherit;padding:12px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--text);width:100%}
+textarea{min-height:100px}
+footer{background:#08080c;border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{margin-right:16px}
+@media(max-width:860px){.hero .wrap,.prod{grid-template-columns:1fr}.prod:nth-of-type(even) .txt{order:0}nav a.h{display:none}section{padding:52px 0}.prod{padding:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tile{transition:none}.tile:hover{transform:none}}
 </style>
 </head>
 <body>
-<header>
-  <h1>CBSystem</h1>
-  <p class="sub">Choose your system</p>
-</header>
-<main class="choices">
-  <a class="choice shop" href="https://shop.cbsystem.co.uk">
-    <span class="icon" aria-hidden="true">🛒</span>
-    <span class="name">Shop</span>
-    <span class="desc">Supermarket and retail till</span>
-  </a>
-  <a class="choice rest" href="https://restaurant.cbsystem.co.uk">
-    <span class="icon" aria-hidden="true">🍽️</span>
-    <span class="name">Restaurant</span>
-    <span class="desc">Restaurant and bar till</span>
-  </a>
+<header><div class="wrap">
+<a class="logo" href="#top">CBSYSTEM</a>
+<nav aria-label="Main"><a class="h" href="#products">Products</a><a class="h" href="#pricing">Pricing</a><a class="h" href="https://shop.cbsystem.co.uk">Shop login</a><a class="h" href="https://restaurant.cbsystem.co.uk">Restaurant login</a><a class="btn p" href="checkout.html" style="padding:9px 18px">Buy now</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<h1>Run the till, the team and the <em>payroll</em> from one place.</h1>
+<p class="lead">Business software for UK shops, restaurants, bars, pet care and factories. Point of sale, clock-in, holidays and payroll, designed to work together. Order online and your system is active within 24 hours.</p>
+<div class="cta"><a class="btn p" href="#pricing">See pricing</a><a class="btn o" href="#products" style="--c:#fff">See the products</a></div>
+<p class="from" id="from"></p>
+</div>
+<div class="tiles" id="tiles" aria-label="Products"></div>
+</div></div>
+
+<section id="products" style="padding-top:24px">
+<div class="wrap">
+<h2 class="s">Everything your business runs on</h2>
+<p class="sub">Start with one product and add more later. They share staff and data, so nothing is typed in twice.</p>
+<div id="prods"></div>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
+<h2 class="s">Why businesses choose CBSystem</h2>
+<p class="sub">Built by people who work with real shops, restaurants and factories.</p>
+<div class="why">
+<div><h3>You own your data</h3><p>Each customer has their own database. We do not hold your sales, staff or payroll records.</p></div>
+<div><h3>Pay once or monthly</h3><p>Choose a one-off licence for the tills and a monthly plan where updates matter.</p></div>
+<div><h3>Active in 24 hours</h3><p>Order online and we load your menu, products and staff, then activate your system.</p></div>
+<div><h3>Secure by default</h3><p>Staff sign in with a PIN and owners with an email code. Login pages are separate from this website.</p></div>
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="wrap">
+<h2 class="s">Simple prices. Monthly or once.</h2>
+<p class="sub">Pick the way you like to pay. Every plan includes setup for your business.</p>
+<div class="tog" role="group" aria-label="Payment type"><button id="bm" aria-pressed="true">Monthly</button><button id="bo" aria-pressed="false">One-off</button></div>
+<div class="plans" id="plans"></div>
+<p class="fine" id="vat"></p>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
+<h2 class="s">From order to live in 24 hours</h2>
+<p class="sub">No waiting for a salesperson.</p>
+<ol class="steps">
+<li><b>Choose your products</b><span>Pick monthly or one-off on the checkout page.</span></li>
+<li><b>Check out</b><span>Enter your business details and place your order.</span></li>
+<li><b>We set you up</b><span>We load your menu, products and staff.</span></li>
+<li><b>Active within 24 hours</b><span>You receive your login details and start trading.</span></li>
+</ol>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+<h2 class="s">Questions? Ask for a demo</h2>
+<p class="sub">Tell us what you run. We reply within one working day.</p>
+<form id="f">
+<label>Your name<input name="name" required autocomplete="name"></label>
+<label>Email<input type="email" name="email" required autocomplete="email"></label>
+<label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+<label>Message<textarea name="msg"></textarea></label>
+<button class="btn p" type="submit">Send enquiry</button>
+</form>
+</div>
+</section>
 </main>
-<p class="note">After you choose, enter your email address. We will send you a 6-digit code to sign in.</p>
+
+<footer><div class="wrap">
+<div>&copy; <span id="y"></span> CBSystem. All rights reserved.</div>
+<div><a href="checkout.html">Buy now</a><a href="https://shop.cbsystem.co.uk">Shop login</a><a href="https://restaurant.cbsystem.co.uk">Restaurant login</a><a id="em" href="#"></a></div>
+</div></footer>
+
+<script src="site-config.js"></script>
+<script>
+/* Built-in copy of the settings, used only if site-config.js cannot be loaded. Edit site-config.js, not this block. */
+if(typeof SITE==="undefined"){
+window.SITE = {
+  email: "info@cbsystem.co.uk",
+  currency: "£",
+  activation: "Your system is activated within 24 hours of your order being confirmed and payment received.",
+  orderEmail: "orders@cbsystem.co.uk",
+  vatNote: "All prices exclude VAT. Setup for your menu, products and staff is included.",
+  products: [
+    {
+      id: "shop", short: "Barcode · Stock · Till", icon: "🛒", name: "Shop POS", color: "#ff6b35",
+      tagline: "Supermarket and convenience store till with built-in stock control.",
+      intro: "CBSystem Market is a complete till and inventory system for supermarkets, convenience stores and retail counters. Sell fast at the till, receive and count stock in the back, and see profit and VAT from the owner dashboard.",
+      features: [
+        "Touch till with product grid, categories and search",
+        "Barcode scanning by scanner or phone camera",
+        "Basket with quantity buttons, discounts and payment method",
+        "Returns, voids and cash drawer control",
+        "Multi-location stock: Main Store, Stockroom and Cold Store",
+        "Stock intake, transfers between locations and stocktakes",
+        "Low stock alerts and stock value at cost price",
+        "Owner dashboard: sales, net revenue, gross profit, items sold, VAT collected, discounts and refunds",
+        "Top products and recent transactions",
+        "Products, customers and promotions management",
+        "Customer-facing display",
+        "Staff PIN login with Owner, Manager, Till and Stock roles"
+      ],
+      slides: [
+        ["screenshots/shop-till.jpg", "Till: product grid, basket and one-touch charge"],
+        ["screenshots/shop-stock.jpg", "Stock: receive goods, transfer and stocktake"],
+        ["screenshots/shop-dashboard.jpg", "Owner dashboard: sales, profit, VAT and stock value"],
+        ["screenshots/shop-products.jpg", "Products: prices, barcodes and categories"],
+        ["screenshots/shop-reports.jpg", "Reports: see how the business is performing"]
+      ],
+      monthly: "24.99", monthlyUnit: "per month, one till",
+      oneoff: "349", oneoffUnit: "one-off, one till",
+      planFeatures: ["Barcode checkout and receipts", "Multi-location stock control", "Owner dashboard and reports"],
+      cta: "Get Shop POS",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "restaurant", short: "Tables · Kitchen · Bar", icon: "🍽️", name: "Restaurant and Bar POS", color: "#4a9eff",
+      tagline: "Till, waiter, kitchen, bar and self-order kiosk working as one.",
+      intro: "CBSystem PRO connects every station in a restaurant, bar or takeaway. Waiters send orders from the table, the kitchen and bar see their own tickets instantly, and the owner watches the whole floor live.",
+      features: [
+        "Seven stations from one launcher: Till, Waiter, Kitchen, Bar, Owner, Customer display and Self-order kiosk",
+        "Live floor plan for 20 tables, with Restaurant and Bar areas",
+        "Full menu with categories, search and one-tap items",
+        "Covers, eat-in and takeaway orders",
+        "Send items to the Kitchen and Bar separately",
+        "Kitchen display with New, Cooking and Ready columns and order timers",
+        "Bar display with pending drinks and done buttons",
+        "Split bills, discounts, move table and refunds",
+        "Cash and card payment, with a voids log",
+        "Bookings",
+        "Owner dashboard: revenue, running tabs, average cover, kitchen and bar queue, voids and recent transactions",
+        "Self-order kiosk and customer-facing display",
+        "Staff PIN login with roles"
+      ],
+      slides: [
+        ["screenshots/rest-launcher.jpg", "Seven stations, one launcher"],
+        ["screenshots/rest-till.jpg", "Till: menu, tables and order in one screen"],
+        ["screenshots/rest-waiter.jpg", "Waiter: pick a table and take the order"],
+        ["screenshots/rest-kitchen.jpg", "Kitchen display: new, cooking and ready"],
+        ["screenshots/rest-bar.jpg", "Bar display: drinks queue with done buttons"],
+        ["screenshots/rest-owner.jpg", "Owner dashboard: live tables and revenue"]
+      ],
+      monthly: "34.99", monthlyUnit: "per month, one till",
+      oneoff: "499", oneoffUnit: "one-off, one till",
+      planFeatures: ["Tables, kitchen and bar displays", "Split bills, discounts and refunds", "Kiosk and second screen from £99 each"],
+      cta: "Get Restaurant POS",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "clockin", short: "Shifts · Attendance", icon: "⏱️", name: "Clock-in", color: "#2dd4a0",
+      tagline: "Know who is in, who is late and how many hours were worked.",
+      intro: "Staff clock in and out on a shared terminal or their own phone. Managers see the whole team at a glance and hours are ready for payroll.",
+      features: [
+        "Clock in, clock out and breaks",
+        "Live view of who is on shift, on break or late",
+        "Timesheets for every employee",
+        "Hours today and weekly totals",
+        "Attendance reports with Excel export",
+        "Hours pass straight to Payroll"
+      ],
+      slides: [["screenshots/mock-clockin.jpg", "Today: who is in, on break or late", true]],
+      monthly: "4.99", monthlyUnit: "per month, up to 5 staff",
+      oneoff: "149", oneoffUnit: "one-off, up to 5 staff",
+      planFeatures: ["Terminal and mobile clock-in", "Timesheets and reports", "Excel export"],
+      cta: "Get Clock-in",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "holidays", short: "Requests · Calendar", icon: "🏖️", name: "Holiday Management", color: "#ffd700",
+      tagline: "Replace holiday spreadsheets with requests, approvals and a team calendar.",
+      intro: "Employees request time off, managers approve in one tap, and the team calendar shows who is away so shifts are never left short.",
+      features: [
+        "Staff request leave from their phone",
+        "Approve or decline in one tap",
+        "Remaining allowance always visible",
+        "Team calendar with clash warnings",
+        "Sickness and other absence types",
+        "Yearly allowance settings per employee"
+      ],
+      slides: [["screenshots/mock-holidays.jpg", "Team calendar with pending requests", true]],
+      monthly: "3.99", monthlyUnit: "per month, up to 5 staff",
+      oneoff: "99", oneoffUnit: "one-off, up to 5 staff",
+      planFeatures: ["Requests and approvals", "Team calendar", "Allowance tracking"],
+      cta: "Get Holidays",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "payroll", short: "Pay runs · Payslips", icon: "💷", name: "Payroll and HR", color: "#a78bfa",
+      tagline: "UK payroll and employee records in one secure place.",
+      intro: "CBSystem HR+ keeps employee records, hours and pay together. Run payroll from clock-in hours and give each employee a clear payslip.",
+      features: [
+        "Employee profiles and documents",
+        "Pay runs from clock-in hours",
+        "Income tax, National Insurance and pension lines on payslips",
+        "Payslips for every employee",
+        "Separate, secure space for each organisation",
+        "Payroll reports and export"
+      ],
+      slides: [
+        ["screenshots/mock-payroll.jpg", "Pay run: gross, tax, NI and net for the team", true],
+        ["screenshots/mock-payslip.jpg", "Payslip: earnings and deductions", true]
+      ],
+      monthly: "9.99", monthlyUnit: "per month plus £1.99 per employee",
+      oneoff: "", oneoffUnit: "UK tax rules change every April",
+      planFeatures: ["Employee profiles", "Pay runs and payslips", "Hours from clock-in"],
+      cta: "Ask about Payroll",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "pet", short: "Bookings · Pets", icon: "🐾", name: "Pet Care", color: "#f472b6",
+      tagline: "Appointments, pet records and a till for pet shops, groomers and kennels.",
+      intro: "Keep every owner and pet in one place, book grooming and boarding, and remind clients when vaccinations are due.",
+      features: [
+        "Owner and pet records with notes",
+        "Grooming, vet and boarding appointments",
+        "Vaccination and flea treatment tracking",
+        "Visit reminders",
+        "Boarding check-in and check-out",
+        "Built-in till for products and services"
+      ],
+      slides: [["screenshots/mock-pet.jpg", "Today's appointments and pet profile", true]],
+      monthly: "29.99", monthlyUnit: "per month",
+      oneoff: "399", oneoffUnit: "one-off",
+      planFeatures: ["Owners, pets and bookings", "Vaccination tracking", "Built-in till"],
+      cta: "Get Pet Care",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "production", short: "Shifts · Cost per kg", icon: "🏭", name: "Production Dashboard", color: "#22d3ee",
+      tagline: "See output and cost per kilo by shift, straight from your Excel data.",
+      intro: "Built for food manufacturers. Upload shift data from Excel and get clear charts of output, tonnage and cost per kilo.",
+      features: [
+        "Upload shift data from Excel",
+        "Output and tonnage by shift",
+        "Cost per kilo by shift",
+        "Downtime overview",
+        "Weekly and monthly comparison"
+      ],
+      slides: [["screenshots/mock-production.jpg", "Output and cost per kilo by shift", true]],
+      monthly: "39.99", monthlyUnit: "per month",
+      oneoff: "499", oneoffUnit: "one-off",
+      planFeatures: ["Excel upload", "Shift charts", "Cost per kilo"],
+      cta: "Get Production Dashboard",
+      payMonthly: "", payOneoff: ""
+    }
+  ],
+  custom: {
+    title: "Custom", price: "Quote", unit: "Priced to your requirement",
+    bullets: ["Bundles of several products", "Multiple sites", "Tools built around your business"]
+  }
+};
+
+}
+</script>
+<script>
+SITE.products=SITE.products.filter(function(p){return !p.hidden});
+var $=function(i){return document.getElementById(i)},C=SITE.currency,mode='m';
+function fmt(v){return v!==''&&!isNaN(v)?C+v:v}
+function sh(k){return String(k).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+$('y').textContent=new Date().getFullYear();
+$('em').href='mailto:'+SITE.email;$('em').textContent=SITE.email;$('vat').textContent=SITE.vatNote;
+var mins=SITE.products.map(function(p){return parseFloat(p.monthly)}).filter(function(n){return n>0});
+$('from').innerHTML='Plans from <b>'+C+Math.min.apply(null,mins).toFixed(2)+'</b> a month, or a one-off payment.';
+$('tiles').innerHTML=SITE.products.slice(0,6).map(function(p){return'<a class="tile" href="#p-'+p.id+'" style="--c:'+p.color+'"><span>'+p.icon+'</span><b>'+sh(p.name.split(' and ')[0])+'</b><small>'+sh(p.short||'')+'</small></a>'}).join('');
+function buy(p,t){return'checkout.html?p='+p.id+'&t='+t}
+$('prods').innerHTML=SITE.products.map(function(p){
+ return'<article class="prod" id="p-'+p.id+'" style="--c:'+p.color+'"><div class="txt"><div class="ic">'+p.icon+'</div><h3>'+sh(p.name)+'</h3><div class="tg">'+sh(p.tagline)+'</div><p>'+sh(p.intro)+'</p><ul class="feat">'+p.features.map(function(f){return'<li>'+sh(f)+'</li>'}).join('')+'</ul><div class="pl">From <b>'+fmt(p.monthly)+'</b> '+sh(p.monthlyUnit)+'</div><a class="btn o" href="'+buy(p,'m')+'">'+sh(p.cta)+'</a></div>'
+ +'<div data-show="'+p.id+'"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="im"><img alt=""><span class="pv" hidden>Preview design</span></div></div><div class="cap"><button class="arr" aria-label="Previous screen">&#8592;</button><p></p><button class="arr" aria-label="Next screen">&#8594;</button></div><div class="dots">'+p.slides.map(function(_,i){return'<button aria-label="Screen '+(i+1)+'"></button>'}).join('')+'</div></div></article>';
+}).join('');
+SITE.products.forEach(function(p){
+ var box=document.querySelector('[data-show="'+p.id+'"]'),img=box.querySelector('img'),pv=box.querySelector('.pv'),cap=box.querySelector('.cap p'),dots=box.querySelectorAll('.dots button'),arrs=box.querySelectorAll('.arr'),n=p.slides.length,i=0,hover=false;
+ function show(k){i=(k+n)%n;var s=p.slides[i];img.src=s[0];img.alt=s[1];cap.textContent=s[1];pv.hidden=!s[2];dots.forEach(function(d,j){d.className=j===i?'on':''})}
+ arrs[0].onclick=function(){show(i-1)};arrs[1].onclick=function(){show(i+1)};
+ dots.forEach(function(d,j){d.onclick=function(){show(j)}});
+ if(n<2){arrs[0].hidden=arrs[1].hidden=true;box.querySelector('.dots').hidden=true}
+ show(0);
+ if(n>1&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  box.onmouseenter=box.onfocusin=function(){hover=true};box.onmouseleave=box.onfocusout=function(){hover=false};
+  setInterval(function(){if(!hover&&!document.hidden)show(i+1)},5000);
+ }
+});
+function render(){
+ var t=mode;
+ $('plans').innerHTML=SITE.products.map(function(p){
+  var one=t==='o',v=one?(p.oneoff===''?'Monthly only':fmt(p.oneoff)):fmt(p.monthly),u=one?p.oneoffUnit:p.monthlyUnit,tt=(one&&p.oneoff==='')?'m':t;
+  return'<div class="plan" style="--c:'+p.color+'"><h3>'+sh(p.name)+'</h3><div class="pr">'+sh(v)+'</div><div class="u">'+sh(u)+'</div><ul>'+p.planFeatures.map(function(f){return'<li>'+sh(f)+'</li>'}).join('')+'</ul><a class="btn o" href="'+buy(p,tt)+'">'+sh(p.cta)+'</a></div>'}).join('')
+ +'<div class="plan" style="--c:#ffffff"><h3>'+sh(SITE.custom.title)+'</h3><div class="pr">'+sh(SITE.custom.price)+'</div><div class="u">'+sh(SITE.custom.unit)+'</div><ul>'+SITE.custom.bullets.map(function(f){return'<li>'+sh(f)+'</li>'}).join('')+'</ul><a class="btn o" href="#contact">Tell us what you need</a></div>';
+}
+$('bm').onclick=function(){mode='m';$('bm').setAttribute('aria-pressed',true);$('bo').setAttribute('aria-pressed',false);render()};
+$('bo').onclick=function(){mode='o';$('bo').setAttribute('aria-pressed',true);$('bm').setAttribute('aria-pressed',false);render()};
+render();
+$('f').addEventListener('submit',function(e){
+ e.preventDefault();var f=e.target;
+ var b='Name: '+f.name.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value+'\n\n'+f.msg.value;
+ location.href='mailto:'+SITE.email+'?subject='+encodeURIComponent('CBSystem enquiry from '+f.name.value)+'&body='+encodeURIComponent(b);
+});
+</script>
 </body>
 </html>

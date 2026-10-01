@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout | CBSystem</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--card:#1e1e2e;--line:#2a2a40;--text:#f0f0f8;--mut:#9a9ab8;--acc:#ff6b35}
+*{box-sizing:border-box;margin:0}
+body{font-family:"DM Sans",system-ui,Arial,sans-serif;background:radial-gradient(900px 500px at 20% -5%,#2a140d,transparent),var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+:focus-visible{outline:3px solid #ffd700;outline-offset:2px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.logo{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:.04em}
+header{background:#12121c;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:66px}
+.logo{font-size:2rem;color:var(--acc);text-decoration:none}
+header a.b{color:#c8c8e0;text-decoration:none;font-weight:500}
+h1{font-size:clamp(2.6rem,6vw,4rem);line-height:1;margin:36px 0 8px}
+.lead{color:var(--mut);margin-bottom:28px}
+.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;padding-bottom:70px;align-items:start}
+.box{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:24px;margin-bottom:20px}
+.box h2{font-size:1.9rem;margin-bottom:14px}
+.tog{display:inline-flex;background:#12121c;border:2px solid var(--line);border-radius:14px;padding:4px;margin-bottom:16px}
+.tog button{border:0;background:transparent;color:var(--text);font:700 .95rem "DM Sans",sans-serif;padding:9px 22px;border-radius:10px;cursor:pointer}
+.tog button[aria-pressed=true]{background:var(--acc)}
+.item{display:flex;align-items:center;gap:14px;border:2px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px;cursor:pointer}
+.item.on{border-color:var(--c);background:#232336}
+.item input{width:20px;height:20px;accent-color:var(--c)}
+.item .n{flex:1}
+.item b{display:block}
+.item small{color:var(--mut)}
+.item .pr{font:1.8rem "Bebas Neue",sans-serif;letter-spacing:.03em;color:var(--c);text-align:right}
+.item .pr small{display:block;font:400 .72rem "DM Sans",sans-serif;letter-spacing:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:5px;font-weight:500;font-size:.92rem;margin-bottom:12px}
+input[type=text],input[type=email],input[type=tel],select,textarea{font:inherit;padding:12px;border-radius:12px;border:2px solid var(--line);background:#12121c;color:var(--text);width:100%}
+textarea{min-height:80px}
+.sum{position:sticky;top:16px}
+.sum .l{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+.sum .t{display:flex;justify-content:space-between;align-items:baseline;padding-top:14px}
+.sum .t b{font:2.6rem "Bebas Neue",sans-serif;color:#2dd4a0;letter-spacing:.03em}
+.note{background:#12281f;border:2px solid #2dd4a0;border-radius:14px;padding:14px;font-size:.93rem;margin:16px 0}
+.btn{display:block;width:100%;text-align:center;padding:14px 22px;border-radius:12px;font:700 1rem "DM Sans",sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer;background:var(--acc);color:#fff}
+.btn:hover{background:#ff8557}
+.btn.g{background:transparent;border-color:#2dd4a0;color:#2dd4a0;margin-top:10px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.fine{color:var(--mut);font-size:.82rem;margin-top:12px}
+.err{color:#ff4560;font-size:.9rem;min-height:1.2em;margin-bottom:8px}
+#done{display:none;text-align:center;padding:50px 0 90px}
+#done h1{color:#2dd4a0}
+#done .box{max-width:620px;margin:24px auto;text-align:left}
+@media(max-width:860px){.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.sum{position:static}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="index.html">CBSYSTEM</a><a class="b" href="index.html">&larr; Back to website</a></div></header>
+
+<div class="wrap" id="shop">
+<h1>Checkout</h1>
+<p class="lead" id="act"></p>
+<div class="grid">
+<form id="f" novalidate>
+<div class="box">
+<h2>1. Choose your products</h2>
+<div class="tog" role="group" aria-label="Payment type"><button type="button" id="bm" aria-pressed="true">Monthly</button><button type="button" id="bo" aria-pressed="false">One-off</button></div>
+<div id="items"></div>
+</div>
+<div class="box">
+<h2>2. Your business</h2>
+<div class="row"><label>Business name<input type="text" name="biz" required autocomplete="organization"></label>
+<label>Your name<input type="text" name="name" required autocomplete="name"></label></div>
+<div class="row"><label>Email<input type="email" name="email" required autocomplete="email"></label>
+<label>Phone<input type="tel" name="phone" required autocomplete="tel"></label></div>
+<label>Business address<input type="text" name="addr" required autocomplete="street-address"></label>
+<label>Anything we should know? (menu, number of staff, number of tills)<textarea name="msg"></textarea></label>
+<label style="grid-template-columns:auto 1fr;align-items:start;gap:10px"><input type="checkbox" name="terms" required style="width:20px;height:20px;margin-top:3px"><span>I agree to the Terms of Service and Privacy Policy.</span></label>
+</div>
+<div class="err" id="err" role="alert"></div>
+<button class="btn" type="submit">Place order</button>
+</form>
+
+<aside class="box sum">
+<h2>Order summary</h2>
+<div id="lines"><p style="color:var(--mut)">Choose at least one product.</p></div>
+<div class="t"><span>Total <small id="per" style="color:var(--mut)"></small></span><b id="tot">£0</b></div>
+<div class="note" id="note"></div>
+<p class="fine" id="vat"></p>
+</aside>
+</div>
+</div>
+
+<div class="wrap" id="done">
+<h1>Order received</h1>
+<p class="lead" id="doneact"></p>
+<div class="box"><h2>What happens next</h2>
+<ol style="padding-left:20px;display:grid;gap:8px">
+<li>Complete payment using the button below if you see one. Otherwise we email you an invoice.</li>
+<li>We load your menu, products and staff.</li>
+<li>Your system is activated within 24 hours of payment.</li>
+<li>You receive your login details by email.</li>
+</ol>
+<div id="pay" style="margin-top:18px"></div>
+<p class="fine">Your email app has opened with your order ready to send. Please press send so we receive it.</p>
+</div>
+<a class="btn" href="index.html" style="max-width:300px;margin:0 auto">Back to website</a>
+</div>
+
+<script src="site-config.js"></script>
+<script>
+/* Built-in copy of the settings, used only if site-config.js cannot be loaded. Edit site-config.js, not this block. */
+if(typeof SITE==="undefined"){
+window.SITE = {
+  email: "info@cbsystem.co.uk",
+  currency: "£",
+  activation: "Your system is activated within 24 hours of your order being confirmed and payment received.",
+  orderEmail: "orders@cbsystem.co.uk",
+  vatNote: "All prices exclude VAT. Setup for your menu, products and staff is included.",
+  products: [
+    {
+      id: "shop", short: "Barcode · Stock · Till", icon: "🛒", name: "Shop POS", color: "#ff6b35",
+      tagline: "Supermarket and convenience store till with built-in stock control.",
+      intro: "CBSystem Market is a complete till and inventory system for supermarkets, convenience stores and retail counters. Sell fast at the till, receive and count stock in the back, and see profit and VAT from the owner dashboard.",
+      features: [
+        "Touch till with product grid, categories and search",
+        "Barcode scanning by scanner or phone camera",
+        "Basket with quantity buttons, discounts and payment method",
+        "Returns, voids and cash drawer control",
+        "Multi-location stock: Main Store, Stockroom and Cold Store",
+        "Stock intake, transfers between locations and stocktakes",
+        "Low stock alerts and stock value at cost price",
+        "Owner dashboard: sales, net revenue, gross profit, items sold, VAT collected, discounts and refunds",
+        "Top products and recent transactions",
+        "Products, customers and promotions management",
+        "Customer-facing display",
+        "Staff PIN login with Owner, Manager, Till and Stock roles"
+      ],
+      slides: [
+        ["screenshots/shop-till.jpg", "Till: product grid, basket and one-touch charge"],
+        ["screenshots/shop-stock.jpg", "Stock: receive goods, transfer and stocktake"],
+        ["screenshots/shop-dashboard.jpg", "Owner dashboard: sales, profit, VAT and stock value"],
+        ["screenshots/shop-products.jpg", "Products: prices, barcodes and categories"],
+        ["screenshots/shop-reports.jpg", "Reports: see how the business is performing"]
+      ],
+      monthly: "24.99", monthlyUnit: "per month, one till",
+      oneoff: "349", oneoffUnit: "one-off, one till",
+      planFeatures: ["Barcode checkout and receipts", "Multi-location stock control", "Owner dashboard and reports"],
+      cta: "Get Shop POS",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "restaurant", short: "Tables · Kitchen · Bar", icon: "🍽️", name: "Restaurant and Bar POS", color: "#4a9eff",
+      tagline: "Till, waiter, kitchen, bar and self-order kiosk working as one.",
+      intro: "CBSystem PRO connects every station in a restaurant, bar or takeaway. Waiters send orders from the table, the kitchen and bar see their own tickets instantly, and the owner watches the whole floor live.",
+      features: [
+        "Seven stations from one launcher: Till, Waiter, Kitchen, Bar, Owner, Customer display and Self-order kiosk",
+        "Live floor plan for 20 tables, with Restaurant and Bar areas",
+        "Full menu with categories, search and one-tap items",
+        "Covers, eat-in and takeaway orders",
+        "Send items to the Kitchen and Bar separately",
+        "Kitchen display with New, Cooking and Ready columns and order timers",
+        "Bar display with pending drinks and done buttons",
+        "Split bills, discounts, move table and refunds",
+        "Cash and card payment, with a voids log",
+        "Bookings",
+        "Owner dashboard: revenue, running tabs, average cover, kitchen and bar queue, voids and recent transactions",
+        "Self-order kiosk and customer-facing display",
+        "Staff PIN login with roles"
+      ],
+      slides: [
+        ["screenshots/rest-launcher.jpg", "Seven stations, one launcher"],
+        ["screenshots/rest-till.jpg", "Till: menu, tables and order in one screen"],
+        ["screenshots/rest-waiter.jpg", "Waiter: pick a table and take the order"],
+        ["screenshots/rest-kitchen.jpg", "Kitchen display: new, cooking and ready"],
+        ["screenshots/rest-bar.jpg", "Bar display: drinks queue with done buttons"],
+        ["screenshots/rest-owner.jpg", "Owner dashboard: live tables and revenue"]
+      ],
+      monthly: "34.99", monthlyUnit: "per month, one till",
+      oneoff: "499", oneoffUnit: "one-off, one till",
+      planFeatures: ["Tables, kitchen and bar displays", "Split bills, discounts and refunds", "Kiosk and second screen from £99 each"],
+      cta: "Get Restaurant POS",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "clockin", short: "Shifts · Attendance", icon: "⏱️", name: "Clock-in", color: "#2dd4a0",
+      tagline: "Know who is in, who is late and how many hours were worked.",
+      intro: "Staff clock in and out on a shared terminal or their own phone. Managers see the whole team at a glance and hours are ready for payroll.",
+      features: [
+        "Clock in, clock out and breaks",
+        "Live view of who is on shift, on break or late",
+        "Timesheets for every employee",
+        "Hours today and weekly totals",
+        "Attendance reports with Excel export",
+        "Hours pass straight to Payroll"
+      ],
+      slides: [["screenshots/mock-clockin.jpg", "Today: who is in, on break or late", true]],
+      monthly: "4.99", monthlyUnit: "per month, up to 5 staff",
+      oneoff: "149", oneoffUnit: "one-off, up to 5 staff",
+      planFeatures: ["Terminal and mobile clock-in", "Timesheets and reports", "Excel export"],
+      cta: "Get Clock-in",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "holidays", short: "Requests · Calendar", icon: "🏖️", name: "Holiday Management", color: "#ffd700",
+      tagline: "Replace holiday spreadsheets with requests, approvals and a team calendar.",
+      intro: "Employees request time off, managers approve in one tap, and the team calendar shows who is away so shifts are never left short.",
+      features: [
+        "Staff request leave from their phone",
+        "Approve or decline in one tap",
+        "Remaining allowance always visible",
+        "Team calendar with clash warnings",
+        "Sickness and other absence types",
+        "Yearly allowance settings per employee"
+      ],
+      slides: [["screenshots/mock-holidays.jpg", "Team calendar with pending requests", true]],
+      monthly: "3.99", monthlyUnit: "per month, up to 5 staff",
+      oneoff: "99", oneoffUnit: "one-off, up to 5 staff",
+      planFeatures: ["Requests and approvals", "Team calendar", "Allowance tracking"],
+      cta: "Get Holidays",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "payroll", short: "Pay runs · Payslips", icon: "💷", name: "Payroll and HR", color: "#a78bfa",
+      tagline: "UK payroll and employee records in one secure place.",
+      intro: "CBSystem HR+ keeps employee records, hours and pay together. Run payroll from clock-in hours and give each employee a clear payslip.",
+      features: [
+        "Employee profiles and documents",
+        "Pay runs from clock-in hours",
+        "Income tax, National Insurance and pension lines on payslips",
+        "Payslips for every employee",
+        "Separate, secure space for each organisation",
+        "Payroll reports and export"
+      ],
+      slides: [
+        ["screenshots/mock-payroll.jpg", "Pay run: gross, tax, NI and net for the team", true],
+        ["screenshots/mock-payslip.jpg", "Payslip: earnings and deductions", true]
+      ],
+      monthly: "9.99", monthlyUnit: "per month plus £1.99 per employee",
+      oneoff: "", oneoffUnit: "UK tax rules change every April",
+      planFeatures: ["Employee profiles", "Pay runs and payslips", "Hours from clock-in"],
+      cta: "Ask about Payroll",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "pet", short: "Bookings · Pets", icon: "🐾", name: "Pet Care", color: "#f472b6",
+      tagline: "Appointments, pet records and a till for pet shops, groomers and kennels.",
+      intro: "Keep every owner and pet in one place, book grooming and boarding, and remind clients when vaccinations are due.",
+      features: [
+        "Owner and pet records with notes",
+        "Grooming, vet and boarding appointments",
+        "Vaccination and flea treatment tracking",
+        "Visit reminders",
+        "Boarding check-in and check-out",
+        "Built-in till for products and services"
+      ],
+      slides: [["screenshots/mock-pet.jpg", "Today's appointments and pet profile", true]],
+      monthly: "29.99", monthlyUnit: "per month",
+      oneoff: "399", oneoffUnit: "one-off",
+      planFeatures: ["Owners, pets and bookings", "Vaccination tracking", "Built-in till"],
+      cta: "Get Pet Care",
+      payMonthly: "", payOneoff: ""
+    },
+    {
+      id: "production", short: "Shifts · Cost per kg", icon: "🏭", name: "Production Dashboard", color: "#22d3ee",
+      tagline: "See output and cost per kilo by shift, straight from your Excel data.",
+      intro: "Built for food manufacturers. Upload shift data from Excel and get clear charts of output, tonnage and cost per kilo.",
+      features: [
+        "Upload shift data from Excel",
+        "Output and tonnage by shift",
+        "Cost per kilo by shift",
+        "Downtime overview",
+        "Weekly and monthly comparison"
+      ],
+      slides: [["screenshots/mock-production.jpg", "Output and cost per kilo by shift", true]],
+      monthly: "39.99", monthlyUnit: "per month",
+      oneoff: "499", oneoffUnit: "one-off",
+      planFeatures: ["Excel upload", "Shift charts", "Cost per kilo"],
+      cta: "Get Production Dashboard",
+      payMonthly: "", payOneoff: ""
+    }
+  ],
+  custom: {
+    title: "Custom", price: "Quote", unit: "Priced to your requirement",
+    bullets: ["Bundles of several products", "Multiple sites", "Tools built around your business"]
+  }
+};
+
+}
+</script>
+<script>
+SITE.products=SITE.products.filter(function(p){return !p.hidden});
+var $=function(i){return document.getElementById(i)},C=SITE.currency,mode='m';
+var q=new URLSearchParams(location.search),sel={};
+function sh(k){return String(k).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function can(p,m){return m==='m'||p.oneoff!==''}
+function val(p,m){return parseFloat(m==='m'?p.monthly:p.oneoff)}
+function label(p,m){var v=m==='m'?p.monthly:p.oneoff;return isNaN(parseFloat(v))?String(v):C+v}
+if(q.get('t')==='o')mode='o';
+if(q.get('p'))sel[q.get('p')]=true;
+$('act').textContent=SITE.activation;$('vat').textContent=SITE.vatNote;
+$('note').textContent=SITE.activation;
+function draw(){
+ $('bm').setAttribute('aria-pressed',mode==='m');$('bo').setAttribute('aria-pressed',mode==='o');
+ $('items').innerHTML=SITE.products.map(function(p){
+  var ok=can(p,mode),on=ok&&sel[p.id];
+  return'<label class="item'+(on?' on':'')+'" style="--c:'+p.color+(ok?'':';opacity:.5')+'"><input type="checkbox" data-id="'+p.id+'"'+(on?' checked':'')+(ok?'':' disabled')+'><span class="n"><b>'+p.icon+' '+sh(p.name)+'</b><small>'+sh(ok?(mode==='m'?p.monthlyUnit:p.oneoffUnit):'Monthly only')+'</small></span><span class="pr">'+sh(ok?label(p,mode):'-')+'</span></label>'}).join('');
+ document.querySelectorAll('#items input').forEach(function(c){c.onchange=function(){sel[c.dataset.id]=c.checked;draw()}});
+ var chosen=SITE.products.filter(function(p){return sel[p.id]&&can(p,mode)}),sum=0;
+ $('lines').innerHTML=chosen.length?chosen.map(function(p){var v=val(p,mode);if(!isNaN(v))sum+=v;return'<div class="l"><span>'+sh(p.name)+'</span><span>'+sh(label(p,mode))+'</span></div>'}).join(''):'<p style="color:var(--mut)">Choose at least one product.</p>';
+ $('tot').textContent=C+sum.toFixed(2);$('per').textContent=mode==='m'?'per month':'one-off';
+ return chosen;
+}
+$('bm').onclick=function(){mode='m';draw()};$('bo').onclick=function(){mode='o';draw()};
+draw();
+$('f').addEventListener('submit',function(e){
+ e.preventDefault();var f=e.target,chosen=draw(),m=mode;
+ if(!chosen.length){$('err').textContent='Please choose at least one product.';return}
+ if(!f.biz.value||!f.name.value||!f.email.value||!f.phone.value||!f.addr.value){$('err').textContent='Please complete all business details.';return}
+ if(!/^\S+@\S+\.\S+$/.test(f.email.value)){$('err').textContent='Please enter a valid email address.';return}
+ if(!f.terms.checked){$('err').textContent='Please agree to the terms.';return}
+ $('err').textContent='';
+ var lines=chosen.map(function(p){return'- '+p.name+': '+label(p,m)+' ('+(m==='m'?p.monthlyUnit:p.oneoffUnit)+')'}).join('\n');
+ var body='NEW ORDER\n\nBusiness: '+f.biz.value+'\nContact: '+f.name.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value+'\nAddress: '+f.addr.value+'\nBilling: '+(m==='m'?'Monthly':'One-off')+'\n\nProducts:\n'+lines+'\n\nTotal: '+$('tot').textContent+' '+$('per').textContent+'\n\nNotes: '+f.msg.value;
+ var links=chosen.map(function(p){var u=m==='m'?p.payMonthly:p.payOneoff;return u?'<a class="btn g" href="'+sh(u)+'" target="_blank" rel="noopener">Pay now: '+sh(p.name)+'</a>':''}).join('');
+ $('pay').innerHTML=links||'<p>We will email your invoice and payment details shortly.</p>';
+ $('doneact').textContent=SITE.activation;
+ $('shop').style.display='none';$('done').style.display='block';window.scrollTo(0,0);
+ location.href='mailto:'+SITE.orderEmail+'?subject='+encodeURIComponent('CBSystem order: '+f.biz.value)+'&body='+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
