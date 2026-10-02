@@ -320,5 +320,29 @@ const SITE = {
       "Multiple sites",
       "Tools built around your business"
     ]
-  }
+  },
+  "logins": [
+    {
+      "name": "Shop POS",
+      "url": "https://shop.cbsystem.co.uk",
+      "icon": "🛒",
+      "color": "#ff6b35",
+      "note": "Till, stock and owner"
+    },
+    {
+      "name": "Restaurant POS",
+      "url": "https://restaurant.cbsystem.co.uk",
+      "icon": "🍽️",
+      "color": "#4a9eff",
+      "note": "Till, waiter, kitchen and bar"
+    },
+    {
+      "name": "Staff App",
+      "url": "https://staff.cbsystem.co.uk",
+      "icon": "👥",
+      "color": "#2dd4a0",
+      "note": "Staff sign in"
+    }
+  ],
+  "comingSoon": true
 };
