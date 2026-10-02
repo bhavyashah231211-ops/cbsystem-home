@@ -100,7 +100,7 @@ textarea{min-height:80px}
 <ol style="padding-left:20px;display:grid;gap:8px">
 <li>Complete payment using the button below if you see one. Otherwise we email you an invoice.</li>
 <li>We load your menu, products and staff.</li>
-<li>Your system is activated within 24 hours of payment.</li>
+<li id="act3"></li>
 <li>You receive your login details by email.</li>
 </ol>
 <div id="pay" style="margin-top:18px"></div>
@@ -119,6 +119,11 @@ window.SITE = {
   activation: "Your system is activated within 24 hours of your order being confirmed and payment received.",
   orderEmail: "orders@cbsystem.co.uk",
   vatNote: "All prices exclude VAT. Setup for your menu, products and staff is included.",
+  logins: [
+    { name: "Shop POS", url: "https://shop.cbsystem.co.uk", icon: "🛒", color: "#ff6b35", note: "Till, stock and owner" },
+    { name: "Restaurant POS", url: "https://restaurant.cbsystem.co.uk", icon: "🍽️", color: "#4a9eff", note: "Till, waiter, kitchen and bar" },
+    { name: "Staff App", url: "https://staff.cbsystem.co.uk", icon: "👥", color: "#2dd4a0", note: "Staff sign in" }
+  ],
   products: [
     {
       id: "shop", short: "Barcode · Stock · Till", icon: "🛒", name: "Shop POS", color: "#ff6b35",
@@ -326,7 +331,7 @@ $('f').addEventListener('submit',function(e){
  var body='NEW ORDER\n\nBusiness: '+f.biz.value+'\nContact: '+f.name.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value+'\nAddress: '+f.addr.value+'\nBilling: '+(m==='m'?'Monthly':'One-off')+'\n\nProducts:\n'+lines+'\n\nTotal: '+$('tot').textContent+' '+$('per').textContent+'\n\nNotes: '+f.msg.value;
  var links=chosen.map(function(p){var u=m==='m'?p.payMonthly:p.payOneoff;return u?'<a class="btn g" href="'+sh(u)+'" target="_blank" rel="noopener">Pay now: '+sh(p.name)+'</a>':''}).join('');
  $('pay').innerHTML=links||'<p>We will email your invoice and payment details shortly.</p>';
- $('doneact').textContent=SITE.activation;
+ $('doneact').textContent=SITE.activation;$('act3').textContent=SITE.activation;
  $('shop').style.display='none';$('done').style.display='block';window.scrollTo(0,0);
  location.href='mailto:'+SITE.orderEmail+'?subject='+encodeURIComponent('CBSystem order: '+f.biz.value)+'&body='+encodeURIComponent(body);
 });

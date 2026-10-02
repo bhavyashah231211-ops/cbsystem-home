@@ -42,6 +42,15 @@ h1 em{font-style:normal;color:var(--acc)}
 .tile b{font:1.4rem "Bebas Neue",sans-serif;letter-spacing:.06em;display:block}
 .tile small{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
 .tile:hover{transform:translateY(-3px)}
+.lgbox{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:24px}
+.lgbox h2{font-size:2rem;margin:0}
+.lg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
+.lg a{display:flex;gap:12px;align-items:center;text-decoration:none;border:2px solid var(--c);border-radius:16px;padding:14px 16px;background:#12121c}
+.lg a:hover{background:var(--c);color:#0a0a0f}
+.lg a:hover small{color:#0a0a0f}
+.lg b{display:block;font:1.35rem "Bebas Neue",sans-serif;letter-spacing:.05em;line-height:1.1}
+.lg small{color:var(--mut)}
+.lg .i{font-size:1.8rem}
 section{padding:72px 0}
 h2.s{font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1;margin-bottom:12px}
 .sub{color:var(--mut);max-width:40em;margin-bottom:40px}
@@ -103,19 +112,21 @@ footer a{margin-right:16px}
 <body>
 <header><div class="wrap">
 <a class="logo" href="#top">CBSYSTEM</a>
-<nav aria-label="Main"><a class="h" href="#products">Products</a><a class="h" href="#pricing">Pricing</a><a class="h" href="https://shop.cbsystem.co.uk">Shop login</a><a class="h" href="https://restaurant.cbsystem.co.uk">Restaurant login</a><a class="btn p" href="checkout.html" style="padding:9px 18px">Buy now</a></nav>
+<nav aria-label="Main"><a class="h" href="#products">Products</a><a class="h" href="#pricing">Pricing</a><a href="#logins">Login</a><a class="btn p" href="checkout.html" style="padding:9px 18px">Buy now</a></nav>
 </div></header>
 
 <main id="top">
 <div class="hero"><div class="wrap">
 <div>
 <h1>Run the till, the team and the <em>payroll</em> from one place.</h1>
-<p class="lead">Business software for UK shops, restaurants, bars, pet care and factories. Point of sale, clock-in, holidays and payroll, designed to work together. Order online and your system is active within 24 hours.</p>
+<p class="lead">Business software for UK shops, restaurants, bars, pet care and factories. Point of sale, clock-in, holidays and payroll, designed to work together. <span id="actmsg"></span></p>
 <div class="cta"><a class="btn p" href="#pricing">See pricing</a><a class="btn o" href="#products" style="--c:#fff">See the products</a></div>
 <p class="from" id="from"></p>
 </div>
 <div class="tiles" id="tiles" aria-label="Products"></div>
 </div></div>
+
+<section id="logins" style="padding:0 0 10px"><div class="wrap"><div class="lgbox"><h2>Customer and staff login</h2><div class="lg" id="lg"></div></div></div></section>
 
 <section id="products" style="padding-top:24px">
 <div class="wrap">
@@ -132,7 +143,7 @@ footer a{margin-right:16px}
 <div class="why">
 <div><h3>You own your data</h3><p>Each customer has their own database. We do not hold your sales, staff or payroll records.</p></div>
 <div><h3>Pay once or monthly</h3><p>Choose a one-off licence for the tills and a monthly plan where updates matter.</p></div>
-<div><h3>Active in 24 hours</h3><p>Order online and we load your menu, products and staff, then activate your system.</p></div>
+<div><h3>Fast activation</h3><p id="actp"></p></div>
 <div><h3>Secure by default</h3><p>Staff sign in with a PIN and owners with an email code. Login pages are separate from this website.</p></div>
 </div>
 </div>
@@ -150,13 +161,13 @@ footer a{margin-right:16px}
 
 <section class="alt">
 <div class="wrap">
-<h2 class="s">From order to live in 24 hours</h2>
+<h2 class="s">From order to live</h2>
 <p class="sub">No waiting for a salesperson.</p>
 <ol class="steps">
 <li><b>Choose your products</b><span>Pick monthly or one-off on the checkout page.</span></li>
 <li><b>Check out</b><span>Enter your business details and place your order.</span></li>
 <li><b>We set you up</b><span>We load your menu, products and staff.</span></li>
-<li><b>Active within 24 hours</b><span>You receive your login details and start trading.</span></li>
+<li><b>Go live</b><span>You receive your login details and start trading.</span></li>
 </ol>
 </div>
 </section>
@@ -178,7 +189,7 @@ footer a{margin-right:16px}
 
 <footer><div class="wrap">
 <div>&copy; <span id="y"></span> CBSystem. All rights reserved.</div>
-<div><a href="checkout.html">Buy now</a><a href="https://shop.cbsystem.co.uk">Shop login</a><a href="https://restaurant.cbsystem.co.uk">Restaurant login</a><a id="em" href="#"></a></div>
+<div><a href="checkout.html">Buy now</a><span id="flog"></span><a id="em" href="#"></a></div>
 </div></footer>
 
 <script src="site-config.js"></script>
@@ -191,6 +202,11 @@ window.SITE = {
   activation: "Your system is activated within 24 hours of your order being confirmed and payment received.",
   orderEmail: "orders@cbsystem.co.uk",
   vatNote: "All prices exclude VAT. Setup for your menu, products and staff is included.",
+  logins: [
+    { name: "Shop POS", url: "https://shop.cbsystem.co.uk", icon: "🛒", color: "#ff6b35", note: "Till, stock and owner" },
+    { name: "Restaurant POS", url: "https://restaurant.cbsystem.co.uk", icon: "🍽️", color: "#4a9eff", note: "Till, waiter, kitchen and bar" },
+    { name: "Staff App", url: "https://staff.cbsystem.co.uk", icon: "👥", color: "#2dd4a0", note: "Staff sign in" }
+  ],
   products: [
     {
       id: "shop", short: "Barcode · Stock · Till", icon: "🛒", name: "Shop POS", color: "#ff6b35",
@@ -369,6 +385,12 @@ function fmt(v){return v!==''&&!isNaN(v)?C+v:v}
 function sh(k){return String(k).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 $('y').textContent=new Date().getFullYear();
 $('em').href='mailto:'+SITE.email;$('em').textContent=SITE.email;$('vat').textContent=SITE.vatNote;
+var DEFLG=[{name:'Shop POS',url:'https://shop.cbsystem.co.uk',icon:'🛒',color:'#ff6b35',note:'Till, stock and owner'},{name:'Restaurant POS',url:'https://restaurant.cbsystem.co.uk',icon:'🍽️',color:'#4a9eff',note:'Till, waiter, kitchen and bar'},{name:'Staff App',url:'https://staff.cbsystem.co.uk',icon:'👥',color:'#2dd4a0',note:'Staff sign in'}];
+var LG=(SITE.logins||DEFLG).filter(function(l){return !l.hidden});
+$('lg').innerHTML=LG.map(function(l){return'<a href="'+sh(l.url)+'" style="--c:'+sh(l.color)+'"><span class="i">'+l.icon+'</span><span><b>'+sh(l.name)+' login</b><small>'+sh(l.note||'')+'</small></span></a>'}).join('');
+$('flog').innerHTML=LG.map(function(l){return'<a href="'+sh(l.url)+'">'+sh(l.name)+' login</a>'}).join('');
+if(!LG.length)$('logins').hidden=true;
+$('actmsg').textContent=SITE.activation;$('actp').textContent=SITE.activation;
 var mins=SITE.products.map(function(p){return parseFloat(p.monthly)}).filter(function(n){return n>0});
 $('from').innerHTML='Plans from <b>'+C+Math.min.apply(null,mins).toFixed(2)+'</b> a month, or a one-off payment.';
 $('tiles').innerHTML=SITE.products.slice(0,6).map(function(p){return'<a class="tile" href="#p-'+p.id+'" style="--c:'+p.color+'"><span>'+p.icon+'</span><b>'+sh(p.name.split(' and ')[0])+'</b><small>'+sh(p.short||'')+'</small></a>'}).join('');
