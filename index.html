@@ -197,6 +197,9 @@ footer a{margin-right:16px}
 /* Built-in copy of the settings, used only if site-config.js cannot be loaded. Edit site-config.js, not this block. */
 if(typeof SITE==="undefined"){
 window.SITE = {
+  comingSoon: false,
+  comingSoonTitle: "Coming soon",
+  comingSoonText: "We are updating our website. Ordering and new plans will be back shortly.",
   email: "info@cbsystem.co.uk",
   currency: "£",
   activation: "Your system is activated within 24 hours of your order being confirmed and payment received.",
@@ -380,6 +383,14 @@ window.SITE = {
 </script>
 <script>
 SITE.products=SITE.products.filter(function(p){return !p.hidden});
+function showCS(){
+ function e(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+ var L=(SITE.logins||[{name:'Shop POS',url:'https://shop.cbsystem.co.uk',icon:'🛒',color:'#ff6b35',note:'Till, stock and owner'},{name:'Restaurant POS',url:'https://restaurant.cbsystem.co.uk',icon:'🍽️',color:'#4a9eff',note:'Till, waiter, kitchen and bar'},{name:'Staff App',url:'https://staff.cbsystem.co.uk',icon:'👥',color:'#2dd4a0',note:'Staff sign in'}]).filter(function(l){return !l.hidden});
+ document.title='CBSystem | Coming soon';
+ var m=document.createElement('meta');m.name='robots';m.content='noindex';document.head.appendChild(m);
+ document.body.innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:30px;text-align:center"><div style="max-width:760px;width:100%"><div class="logo" style="font-size:3rem;display:block">CBSYSTEM</div><h1 style="margin:18px 0 12px">'+e(SITE.comingSoonTitle||'Coming soon')+'</h1><p class="lead" style="margin:0 auto 22px">'+e(SITE.comingSoonText||'We are updating our website. Please check back soon.')+'</p><p><a href="mailto:'+e(SITE.email)+'" style="color:var(--acc);font-weight:700">'+e(SITE.email)+'</a></p>'+(L.length?'<div class="lgbox" style="margin-top:28px;text-align:left"><h2>Existing customers</h2><div class="lg">'+L.map(function(l){return'<a href="'+e(l.url)+'" style="--c:'+e(l.color)+'"><span class="i">'+l.icon+'</span><span><b>'+e(l.name)+' login</b><small>'+e(l.note||'')+'</small></span></a>'}).join('')+'</div></div>':'')+'</div></main>';
+}
+if(SITE.comingSoon){showCS();}else{
 var $=function(i){return document.getElementById(i)},C=SITE.currency,mode='m';
 function fmt(v){return v!==''&&!isNaN(v)?C+v:v}
 function sh(k){return String(k).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
@@ -426,6 +437,7 @@ $('f').addEventListener('submit',function(e){
  var b='Name: '+f.name.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value+'\n\n'+f.msg.value;
  location.href='mailto:'+SITE.email+'?subject='+encodeURIComponent('CBSystem enquiry from '+f.name.value)+'&body='+encodeURIComponent(b);
 });
+}
 </script>
 </body>
 </html>

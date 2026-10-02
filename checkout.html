@@ -114,6 +114,9 @@ textarea{min-height:80px}
 /* Built-in copy of the settings, used only if site-config.js cannot be loaded. Edit site-config.js, not this block. */
 if(typeof SITE==="undefined"){
 window.SITE = {
+  comingSoon: false,
+  comingSoonTitle: "Coming soon",
+  comingSoonText: "We are updating our website. Ordering and new plans will be back shortly.",
   email: "info@cbsystem.co.uk",
   currency: "£",
   activation: "Your system is activated within 24 hours of your order being confirmed and payment received.",
@@ -297,6 +300,7 @@ window.SITE = {
 </script>
 <script>
 SITE.products=SITE.products.filter(function(p){return !p.hidden});
+if(SITE.comingSoon){location.replace('index.html');}
 var $=function(i){return document.getElementById(i)},C=SITE.currency,mode='m';
 var q=new URLSearchParams(location.search),sel={};
 function sh(k){return String(k).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
