@@ -1,4 +1,5 @@
-/* CBSYSTEM SITE SETTINGS - created by the website editor.
+/* CBSystem SITE SETTINGS
+   Software only. Hardware supplied on request with a personalised deal.
    To change prices again, open admin.html on your computer. */
 const SITE = {
   "comingSoon": false,
@@ -13,51 +14,29 @@ const SITE = {
   },
   "email": "info@cbsystem.co.uk",
   "currency": "£",
-  "activation": "Your system is activated within 2 days to 7 days of your order being confirmed and payment received.\nHardware will be basic set up as per requirement. ",
+  "activation": "Start your free trial today. Your system is set up within 2 to 7 days of your order being confirmed.",
   "orderEmail": "orders@cbsystem.co.uk",
   "vatNote": "All prices exclude VAT. Setup for your menu, products and staff is included.",
-  "logins": [
-    {
-      "name": "Shop POS",
-      "url": "https://shop.cbsystem.co.uk/admin",
-      "icon": "🛒",
-      "color": "#ff6b35",
-      "note": "Till, stock and owner",
-      "hidden": true
-    },
-    {
-      "name": "Restaurant POS",
-      "url": "https://restaurant.cbsystem.co.uk/admin",
-      "icon": "🍽️",
-      "color": "#4a9eff",
-      "note": "Till, waiter, kitchen and bar",
-      "hidden": true
-    },
-    {
-      "name": "Staff App",
-      "url": "https://staff.cbsystem.co.uk/admin",
-      "icon": "👥",
-      "color": "#2dd4a0",
-      "note": "Staff sign in",
-      "hidden": true
-    },
-    {
-      "name": "Pet Care",
-      "url": "https://https://pet.cbsystem.co.uk/admin/",
-      "icon": "🔗",
-      "color": "#9a9ab8",
-      "note": "",
-      "hidden": true
-    },
-    {
-      "name": "New app",
-      "url": "https://",
-      "icon": "🔗",
-      "color": "#9a9ab8",
-      "note": "",
-      "hidden": true
-    }
-  ],
+
+  "trial": {
+    "enabled": true,
+    "days": 14,
+    "title": "14-day free trial",
+    "text": "Try everything free for 14 days. No card needed. Cancel any time."
+  },
+  "startupOffer": {
+    "enabled": true,
+    "title": "Startup offer",
+    "text": "New business? Get launch pricing on your first year. Ask us for details."
+  },
+  "hardware": {
+    "title": "Hardware on request",
+    "text": "CBSystem is sold as software only. Need tills, printers, tablets, scanners or NFC tags? We can supply hardware to suit your business, with a personalised deal. Just ask."
+  },
+  "yearlyNote": "Pay yearly and save the equivalent of 2 months.",
+
+  "logins": [],
+
   "products": [
     {
       "id": "shop",
@@ -65,7 +44,7 @@ const SITE = {
       "icon": "🛒",
       "name": "Shop POS",
       "color": "#ff6b35",
-      "tagline": "Supermarket and convenience store till with built-in stock control. This is software Licence price, Hardware cost separately as per your requirement ",
+      "tagline": "Supermarket and convenience store till with built-in stock control. Software only.",
       "intro": "CBSystem Market is a complete till and inventory system for supermarkets, convenience stores and retail counters. Sell fast at the till, receive and count stock in the back, and see profit and VAT from the owner dashboard.",
       "features": [
         "Touch till with product grid, categories and search",
@@ -82,38 +61,26 @@ const SITE = {
         "Staff PIN login with Owner, Manager, Till and Stock roles"
       ],
       "slides": [
-        [
-          "screenshots/shop-till.jpg",
-          "Till: product grid, basket and one-touch charge"
-        ],
-        [
-          "screenshots/shop-stock.jpg",
-          "Stock: receive goods, transfer and stocktake"
-        ],
-        [
-          "screenshots/shop-dashboard.jpg",
-          "Owner dashboard: sales, profit, VAT and stock value"
-        ],
-        [
-          "screenshots/shop-products.jpg",
-          "Products: prices, barcodes and categories"
-        ],
-        [
-          "screenshots/shop-reports.jpg",
-          "Reports: see how the business is performing"
-        ]
+        ["screenshots/shop-till.jpg", "Till: product grid, basket and one-touch charge"],
+        ["screenshots/shop-stock.jpg", "Stock: receive goods, transfer and stocktake"],
+        ["screenshots/shop-dashboard.jpg", "Owner dashboard: sales, profit, VAT and stock value"],
+        ["screenshots/shop-products.jpg", "Products: prices, barcodes and categories"],
+        ["screenshots/shop-reports.jpg", "Reports: see how the business is performing"]
       ],
-      "monthly": "14.99",
+      "monthly": "9.99",
       "monthlyUnit": "per month, one till",
-      "oneoff": "799",
-      "oneoffUnit": "one-off, one till",
+      "yearly": "99",
+      "yearlyUnit": "per year, one till (save 2 months)",
+      "oneoff": "",
+      "oneoffUnit": "",
       "planFeatures": [
         "Barcode checkout and receipts",
         "Multi-location stock control",
         "Owner dashboard and reports"
       ],
-      "cta": "Get Shop POS",
+      "cta": "Start free trial",
       "payMonthly": "",
+      "payYearly": "",
       "payOneoff": ""
     },
     {
@@ -122,7 +89,7 @@ const SITE = {
       "icon": "🍽️",
       "name": "Restaurant and Bar POS",
       "color": "#4a9eff",
-      "tagline": "Till, waiter, kitchen, bar and self-order kiosk working as one.",
+      "tagline": "Till, waiter, kitchen, bar and self-order kiosk working as one. Software only.",
       "intro": "CBSystem PRO connects every station in a restaurant, bar or takeaway. Waiters send orders from the table, the kitchen and bar see their own tickets instantly, and the owner watches the whole floor live.",
       "features": [
         "Seven stations from one launcher: Till, Waiter, Kitchen, Bar, Owner, Customer display and Self-order kiosk",
@@ -140,53 +107,39 @@ const SITE = {
         "Staff PIN login with roles"
       ],
       "slides": [
-        [
-          "screenshots/rest-launcher.jpg",
-          "Seven stations, one launcher"
-        ],
-        [
-          "screenshots/rest-till.jpg",
-          "Till: menu, tables and order in one screen"
-        ],
-        [
-          "screenshots/rest-waiter.jpg",
-          "Waiter: pick a table and take the order"
-        ],
-        [
-          "screenshots/rest-kitchen.jpg",
-          "Kitchen display: new, cooking and ready"
-        ],
-        [
-          "screenshots/rest-bar.jpg",
-          "Bar display: drinks queue with done buttons"
-        ],
-        [
-          "screenshots/rest-owner.jpg",
-          "Owner dashboard: live tables and revenue"
-        ]
+        ["screenshots/rest-launcher.jpg", "Seven stations, one launcher"],
+        ["screenshots/rest-till.jpg", "Till: menu, tables and order in one screen"],
+        ["screenshots/rest-waiter.jpg", "Waiter: pick a table and take the order"],
+        ["screenshots/rest-kitchen.jpg", "Kitchen display: new, cooking and ready"],
+        ["screenshots/rest-bar.jpg", "Bar display: drinks queue with done buttons"],
+        ["screenshots/rest-owner.jpg", "Owner dashboard: live tables and revenue"]
       ],
-      "monthly": "34.99",
+      "monthly": "19.99",
       "monthlyUnit": "per month, one till",
-      "oneoff": "499",
-      "oneoffUnit": "one-off, one till",
+      "yearly": "199",
+      "yearlyUnit": "per year, one till (save 2 months)",
+      "oneoff": "",
+      "oneoffUnit": "",
       "planFeatures": [
         "Tables, kitchen and bar displays",
         "Split bills, discounts and refunds",
-        "Kiosk and second screen from £99 each"
+        "Kiosk and second screen available on request"
       ],
-      "cta": "Get Restaurant POS",
+      "cta": "Start free trial",
       "payMonthly": "",
+      "payYearly": "",
       "payOneoff": ""
     },
     {
       "id": "clockin",
-      "short": "Shifts · Attendance",
+      "short": "NFC · Shifts · Attendance",
       "icon": "⏱️",
-      "name": "Clock-in",
+      "name": "Clock-in Staff App",
       "color": "#2dd4a0",
-      "tagline": "Know who is in, who is late and how many hours were worked.",
-      "intro": "Staff clock in and out on a shared terminal or their own phone. Managers see the whole team at a glance and hours are ready for payroll.",
+      "tagline": "Staff tap an NFC tag to clock in. Know who is in, who is late and how many hours were worked.",
+      "intro": "Staff clock in and out with an NFC tag that we provide, or from their own phone. Managers see the whole team at a glance and hours are ready for payroll.",
       "features": [
+        "NFC tag clock-in: tags provided by us",
         "Clock in, clock out and breaks",
         "Live view of who is on shift, on break or late",
         "Timesheets for every employee",
@@ -195,23 +148,22 @@ const SITE = {
         "Hours pass straight to Payroll"
       ],
       "slides": [
-        [
-          "screenshots/mock-clockin.jpg",
-          "Today: who is in, on break or late",
-          true
-        ]
+        ["screenshots/mock-clockin.jpg", "Today: who is in, on break or late", true]
       ],
-      "monthly": "4.99",
+      "monthly": "2.99",
       "monthlyUnit": "per month, up to 5 staff",
-      "oneoff": "149",
-      "oneoffUnit": "one-off, up to 5 staff",
+      "yearly": "29",
+      "yearlyUnit": "per year, up to 5 staff (save 2 months)",
+      "oneoff": "",
+      "oneoffUnit": "",
       "planFeatures": [
-        "Terminal and mobile clock-in",
+        "NFC tags provided",
         "Timesheets and reports",
         "Excel export"
       ],
-      "cta": "Get Clock-in",
+      "cta": "Start free trial",
       "payMonthly": "",
+      "payYearly": "",
       "payOneoff": ""
     },
     {
@@ -231,23 +183,22 @@ const SITE = {
         "Yearly allowance settings per employee"
       ],
       "slides": [
-        [
-          "screenshots/mock-holidays.jpg",
-          "Team calendar with pending requests",
-          true
-        ]
+        ["screenshots/mock-holidays.jpg", "Team calendar with pending requests", true]
       ],
-      "monthly": "3.99",
+      "monthly": "2.49",
       "monthlyUnit": "per month, up to 5 staff",
-      "oneoff": "99",
-      "oneoffUnit": "one-off, up to 5 staff",
+      "yearly": "24",
+      "yearlyUnit": "per year, up to 5 staff (save 2 months)",
+      "oneoff": "",
+      "oneoffUnit": "",
       "planFeatures": [
         "Requests and approvals",
         "Team calendar",
         "Allowance tracking"
       ],
-      "cta": "Get Holidays",
+      "cta": "Start free trial",
       "payMonthly": "",
+      "payYearly": "",
       "payOneoff": ""
     },
     {
@@ -267,28 +218,23 @@ const SITE = {
         "Payroll reports and export"
       ],
       "slides": [
-        [
-          "screenshots/mock-payroll.jpg",
-          "Pay run: gross, tax, NI and net for the team",
-          true
-        ],
-        [
-          "screenshots/mock-payslip.jpg",
-          "Payslip: earnings and deductions",
-          true
-        ]
+        ["screenshots/mock-payroll.jpg", "Pay run: gross, tax, NI and net for the team", true],
+        ["screenshots/mock-payslip.jpg", "Payslip: earnings and deductions", true]
       ],
-      "monthly": "9.99",
-      "monthlyUnit": "per month plus £1.99 per employee",
+      "monthly": "7.99",
+      "monthlyUnit": "per month plus £1.49 per employee",
+      "yearly": "79",
+      "yearlyUnit": "per year plus £14 per employee (save 2 months)",
       "oneoff": "",
-      "oneoffUnit": "UK tax rules change every April",
+      "oneoffUnit": "",
       "planFeatures": [
         "Employee profiles",
         "Pay runs and payslips",
         "Hours from clock-in"
       ],
-      "cta": "Ask about Payroll",
+      "cta": "Start free trial",
       "payMonthly": "",
+      "payYearly": "",
       "payOneoff": ""
     },
     {
@@ -308,23 +254,22 @@ const SITE = {
         "Built-in till for products and services"
       ],
       "slides": [
-        [
-          "screenshots/mock-pet.jpg",
-          "Today's appointments and pet profile",
-          true
-        ]
+        ["screenshots/mock-pet.jpg", "Today's appointments and pet profile", true]
       ],
-      "monthly": "29.99",
+      "monthly": "19.99",
       "monthlyUnit": "per month",
-      "oneoff": "399",
-      "oneoffUnit": "one-off",
+      "yearly": "199",
+      "yearlyUnit": "per year (save 2 months)",
+      "oneoff": "",
+      "oneoffUnit": "",
       "planFeatures": [
         "Owners, pets and bookings",
         "Vaccination tracking",
         "Built-in till"
       ],
-      "cta": "Get Pet Care",
+      "cta": "Start free trial",
       "payMonthly": "",
+      "payYearly": "",
       "payOneoff": ""
     },
     {
@@ -343,33 +288,33 @@ const SITE = {
         "Weekly and monthly comparison"
       ],
       "slides": [
-        [
-          "screenshots/mock-production.jpg",
-          "Output and cost per kilo by shift",
-          true
-        ]
+        ["screenshots/mock-production.jpg", "Output and cost per kilo by shift", true]
       ],
-      "monthly": "39.99",
+      "monthly": "24.99",
       "monthlyUnit": "per month",
-      "oneoff": "499",
-      "oneoffUnit": "one-off",
+      "yearly": "249",
+      "yearlyUnit": "per year (save 2 months)",
+      "oneoff": "",
+      "oneoffUnit": "",
       "planFeatures": [
         "Excel upload",
         "Shift charts",
         "Cost per kilo"
       ],
-      "cta": "Get Production Dashboard",
+      "cta": "Start free trial",
       "payMonthly": "",
+      "payYearly": "",
       "payOneoff": ""
     }
   ],
   "custom": {
     "title": "Custom",
     "price": "Quote",
-    "unit": "Priced to your requirement",
+    "unit": "Personalised deals, including hardware",
     "bullets": [
       "Bundles of several products",
       "Multiple sites",
+      "Hardware supplied to your requirement",
       "Tools built around your business"
     ]
   }
