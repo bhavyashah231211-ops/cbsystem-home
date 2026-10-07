@@ -13,7 +13,7 @@ const SITE = {
   },
   "email": "info@cbsystem.co.uk",
   "currency": "£",
-  "activation": "Your system is activated within 2 days to 7 days of your order being confirmed and payment received.",
+  "activation": "Your system is activated within 2 days to 7 days of your order being confirmed and payment received.\nHardware will be basic set up as per requirement. ",
   "orderEmail": "orders@cbsystem.co.uk",
   "vatNote": "All prices exclude VAT. Setup for your menu, products and staff is included.",
   "logins": [
@@ -22,28 +22,32 @@ const SITE = {
       "url": "https://shop.cbsystem.co.uk/admin",
       "icon": "🛒",
       "color": "#ff6b35",
-      "note": "Till, stock and owner"
+      "note": "Till, stock and owner",
+      "hidden": true
     },
     {
       "name": "Restaurant POS",
       "url": "https://restaurant.cbsystem.co.uk/admin",
       "icon": "🍽️",
       "color": "#4a9eff",
-      "note": "Till, waiter, kitchen and bar"
+      "note": "Till, waiter, kitchen and bar",
+      "hidden": true
     },
     {
       "name": "Staff App",
       "url": "https://staff.cbsystem.co.uk/admin",
       "icon": "👥",
       "color": "#2dd4a0",
-      "note": "Staff sign in"
+      "note": "Staff sign in",
+      "hidden": true
     },
     {
       "name": "Pet Care",
       "url": "https://https://pet.cbsystem.co.uk/admin/",
       "icon": "🔗",
       "color": "#9a9ab8",
-      "note": ""
+      "note": "",
+      "hidden": true
     },
     {
       "name": "New app",
@@ -61,7 +65,7 @@ const SITE = {
       "icon": "🛒",
       "name": "Shop POS",
       "color": "#ff6b35",
-      "tagline": "Supermarket and convenience store till with built-in stock control.",
+      "tagline": "Supermarket and convenience store till with built-in stock control. This is software Licence price, Hardware cost separately as per your requirement ",
       "intro": "CBSystem Market is a complete till and inventory system for supermarkets, convenience stores and retail counters. Sell fast at the till, receive and count stock in the back, and see profit and VAT from the owner dashboard.",
       "features": [
         "Touch till with product grid, categories and search",
@@ -99,9 +103,9 @@ const SITE = {
           "Reports: see how the business is performing"
         ]
       ],
-      "monthly": "24.99",
+      "monthly": "14.99",
       "monthlyUnit": "per month, one till",
-      "oneoff": "349",
+      "oneoff": "799",
       "oneoffUnit": "one-off, one till",
       "planFeatures": [
         "Barcode checkout and receipts",
