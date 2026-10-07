@@ -5,7 +5,7 @@ const SITE = {
   "comingSoonTitle": "Coming soon",
   "comingSoonText": "We are updating our website. Ordering and new plans will be back shortly.",
   "legal": {
-    "name": "CBSystem",
+    "name": "",
     "number": "",
     "address": "",
     "ico": "",
@@ -19,31 +19,39 @@ const SITE = {
   "logins": [
     {
       "name": "Shop POS",
-      "url": "https://shop.cbsystem.co.uk",
+      "url": "https://shop.cbsystem.co.uk/admin",
       "icon": "🛒",
       "color": "#ff6b35",
       "note": "Till, stock and owner"
     },
     {
       "name": "Restaurant POS",
-      "url": "https://restaurant.cbsystem.co.uk",
+      "url": "https://restaurant.cbsystem.co.uk/admin",
       "icon": "🍽️",
       "color": "#4a9eff",
       "note": "Till, waiter, kitchen and bar"
     },
     {
       "name": "Staff App",
-      "url": "https://staff.cbsystem.co.uk",
+      "url": "https://staff.cbsystem.co.uk/admin",
       "icon": "👥",
       "color": "#2dd4a0",
       "note": "Staff sign in"
+    },
+    {
+      "name": "Pet Care",
+      "url": "https://https://pet.cbsystem.co.uk/admin/",
+      "icon": "🔗",
+      "color": "#9a9ab8",
+      "note": ""
     },
     {
       "name": "New app",
       "url": "https://",
       "icon": "🔗",
       "color": "#9a9ab8",
-      "note": ""
+      "note": "",
+      "hidden": true
     }
   ],
   "products": [
