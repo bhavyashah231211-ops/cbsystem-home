@@ -1,11 +1,51 @@
 /* CBSYSTEM SITE SETTINGS - created by the website editor.
    To change prices again, open admin.html on your computer. */
 const SITE = {
+  "comingSoon": false,
+  "comingSoonTitle": "Coming soon",
+  "comingSoonText": "We are updating our website. Ordering and new plans will be back shortly.",
+  "legal": {
+    "name": "CBSystem",
+    "number": "",
+    "address": "",
+    "ico": "",
+    "vat": ""
+  },
   "email": "info@cbsystem.co.uk",
   "currency": "£",
   "activation": "Your system is activated within 2 days to 7 days of your order being confirmed and payment received.",
   "orderEmail": "orders@cbsystem.co.uk",
   "vatNote": "All prices exclude VAT. Setup for your menu, products and staff is included.",
+  "logins": [
+    {
+      "name": "Shop POS",
+      "url": "https://shop.cbsystem.co.uk",
+      "icon": "🛒",
+      "color": "#ff6b35",
+      "note": "Till, stock and owner"
+    },
+    {
+      "name": "Restaurant POS",
+      "url": "https://restaurant.cbsystem.co.uk",
+      "icon": "🍽️",
+      "color": "#4a9eff",
+      "note": "Till, waiter, kitchen and bar"
+    },
+    {
+      "name": "Staff App",
+      "url": "https://staff.cbsystem.co.uk",
+      "icon": "👥",
+      "color": "#2dd4a0",
+      "note": "Staff sign in"
+    },
+    {
+      "name": "New app",
+      "url": "https://",
+      "icon": "🔗",
+      "color": "#9a9ab8",
+      "note": ""
+    }
+  ],
   "products": [
     {
       "id": "shop",
@@ -52,8 +92,8 @@ const SITE = {
         ]
       ],
       "monthly": "24.99",
-      "monthlyUnit": "per month, one till (Cloud Base)",
-      "oneoff": "999",
+      "monthlyUnit": "per month, one till",
+      "oneoff": "349",
       "oneoffUnit": "one-off, one till",
       "planFeatures": [
         "Barcode checkout and receipts",
@@ -114,9 +154,9 @@ const SITE = {
         ]
       ],
       "monthly": "34.99",
-      "monthlyUnit": "per month, one till (Cloud Base)",
-      "oneoff": "999",
-      "oneoffUnit": "one-off, one till ( No Cloud )",
+      "monthlyUnit": "per month, one till",
+      "oneoff": "499",
+      "oneoffUnit": "one-off, one till",
       "planFeatures": [
         "Tables, kitchen and bar displays",
         "Split bills, discounts and refunds",
@@ -320,29 +360,5 @@ const SITE = {
       "Multiple sites",
       "Tools built around your business"
     ]
-  },
-  "logins": [
-    {
-      "name": "Shop POS",
-      "url": "https://shop.cbsystem.co.uk",
-      "icon": "🛒",
-      "color": "#ff6b35",
-      "note": "Till, stock and owner"
-    },
-    {
-      "name": "Restaurant POS",
-      "url": "https://restaurant.cbsystem.co.uk",
-      "icon": "🍽️",
-      "color": "#4a9eff",
-      "note": "Till, waiter, kitchen and bar"
-    },
-    {
-      "name": "Staff App",
-      "url": "https://staff.cbsystem.co.uk",
-      "icon": "👥",
-      "color": "#2dd4a0",
-      "note": "Staff sign in"
-    }
-  ],
-  "comingSoon": true
+  }
 };
