@@ -1,10 +1,11 @@
 /* CBSystem SITE SETTINGS
    Software only. Hardware supplied on request with a personalised deal.
-   To change prices again, open admin.html on your computer. */
+   "api" is the Supabase Edge Function that receives orders and enquiries. */
 const SITE = {
   "comingSoon": false,
   "comingSoonTitle": "Coming soon",
   "comingSoonText": "We are updating our website. Ordering and new plans will be back shortly.",
+  "api": "https://xjhkxqhomqdyxgahhtzn.supabase.co/functions/v1/cbs-home",
   "legal": {
     "name": "",
     "number": "",

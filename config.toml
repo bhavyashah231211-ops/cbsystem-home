@@ -1,0 +1,8 @@
+# Supabase CLI settings for CBSystem Home.
+# Only needed if you deploy with the CLI. The dashboard method does not use this file.
+project_id = "xjhkxqhomqdyxgahhtzn"
+
+[functions.cbs-home]
+# The public website calls this function without a login, so JWT checking is off.
+# The function protects itself with validation, a hidden spam field and per-email rate limits.
+verify_jwt = false
