@@ -3,205 +3,169 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CBSystem | POS, Payroll, Clock-in and Business Software for UK Businesses</title>
-<meta name="description" content="CBSystem provides affordable shop and restaurant POS, payroll, staff clock-in, holiday management and pet care software for UK businesses. 14-day free trial, no card needed.">
+<title>CBS System | POS, Clock-in and Business Software for UK Businesses</title>
+<meta name="description" content="CBS System: shop POS, restaurant POS, salon and barber, pet care and staff clock-in software for UK businesses. Plans from £3.99 a month. 14-day free trial.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta property="og:title" content="CBSystem | Business software for UK businesses">
+<meta property="og:title" content="CBS System | Business software for UK businesses">
 <meta property="og:image" content="logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0f;--card:#1e1e2e;--line:#2a2a40;--text:#f0f0f8;--mut:#9a9ab8;--acc:#ff7a00}
+:root{--bg:#eef2f7;--ink:#0c1a2b;--mut:#56657a;--line:#d5dde8;--acc:#1f5eff;--c:var(--acc)}
 *{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
-body{font-family:"DM Sans",system-ui,Arial,sans-serif;background:radial-gradient(900px 500px at 20% -5%,#2a140d,transparent),var(--bg);color:var(--text);line-height:1.6}
+body{font:400 1rem/1.65 Sora,system-ui,sans-serif;background:var(--bg);color:var(--ink)}
 a{color:inherit}
-:focus-visible{outline:3px solid #ffd700;outline-offset:2px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:.04em}
-/* Logo: symbol image plus wordmark in DM Sans (Bebas Neue has no lowercase letters) */
-.logo{display:inline-flex;align-items:center;gap:10px;font-family:"DM Sans",system-ui,sans-serif;font-size:1.6rem;letter-spacing:.5px;text-decoration:none;color:#fff;line-height:1}
-.logo img{height:42px;width:auto;display:block}
-.logo b{font-weight:800;color:var(--acc)}
-.logo span{font-weight:400;color:#fff}
-header{background:#12121ce6;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
-nav{display:flex;gap:22px;align-items:center}
-nav a{text-decoration:none;font-size:.95rem;font-weight:500;color:#c8c8e0}
-nav a:hover{color:#fff}
-.btn{display:inline-block;padding:12px 24px;border-radius:12px;font:700 .95rem "DM Sans",sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer}
-.btn.p{background:var(--acc);color:#0a0a0a}
-.btn.p:hover{background:#ff9633}
-.btn.o{border-color:var(--c,#fff);color:var(--c,#fff);background:transparent}
-.btn.o:hover{background:var(--c,#fff);color:#0a0f0f}
-.hero{padding:64px 0 56px}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-.badge{display:inline-block;background:#2dd4a022;border:1px solid #2dd4a0;color:#2dd4a0;font-weight:700;font-size:.85rem;padding:5px 14px;border-radius:30px;margin-bottom:18px}
-h1{font-size:clamp(3rem,7vw,5.6rem);line-height:.95}
-h1 em{font-style:normal;color:var(--acc)}
-.lead{font-size:1.15rem;color:#c3c3dc;margin:22px 0 28px;max-width:34em}
-.cta{display:flex;gap:14px;flex-wrap:wrap}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.w{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-weight:800;line-height:1.1;letter-spacing:-.025em}
+header{position:sticky;top:0;z-index:9;background:#eef2f7ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1.25rem;text-decoration:none}
+.logo img{height:34px;width:auto}
+nav{display:flex;gap:24px;align-items:center}
+nav a:not(.btn){text-decoration:none;font-weight:600;font-size:.92rem}
+.btn{display:inline-block;padding:12px 24px;border-radius:10px;font:700 .92rem Sora,sans-serif;text-decoration:none;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.btn.p{background:var(--ink);color:#fff}
+.btn:hover{background:var(--c);border-color:var(--c);color:#fff}
+.hero{padding:60px 0 48px}
+.hero .w{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.badge{display:inline-block;background:#fff;border:1px solid var(--line);padding:5px 14px;border-radius:8px;font-weight:600;font-size:.85rem;margin-bottom:18px}
+h1{font-size:clamp(2.3rem,5vw,3.8rem)}
+.lead{font-size:1.05rem;color:var(--mut);margin:18px 0 26px;max-width:30em}
+.row{display:flex;gap:12px;flex-wrap:wrap}
 .from{margin-top:18px;color:var(--mut)}
-.from b{color:#ffd700}
-.showcase{position:relative}
-.showcase .mark{position:absolute;inset:-6% 0 auto 50%;transform:translateX(-50%);height:112%;width:auto;opacity:.09;pointer-events:none}
-.tiles{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.tile{background:#1e1e2ee8;border:2px solid var(--c);border-radius:20px;padding:18px 14px;text-align:center;text-decoration:none;transition:transform .15s}
-.tile span{font-size:1.9rem;display:block}
-.tile b{font:1.4rem "Bebas Neue",sans-serif;letter-spacing:.06em;display:block}
-.tile small{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
-.tile:hover{transform:translateY(-3px)}
-.offer{background:linear-gradient(90deg,#ff7a0022,#ffd70022);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;text-align:center}
-.offer b{color:#ffd700}
-section{padding:72px 0}
-h2.s{font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1;margin-bottom:12px}
-.sub{color:var(--mut);max-width:40em;margin-bottom:40px}
-.prod{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center;background:var(--card);border:2px solid var(--c);border-radius:26px;padding:34px;margin-bottom:34px}
-.prod:nth-of-type(even) .txt{order:2}
-.prod.solo{grid-template-columns:1fr}
-.prod.solo .txt{order:0}
-.prod .ic{font-size:2.2rem}
-.prod h3{font-size:2.4rem;line-height:1;color:var(--c);margin:6px 0 8px}
-.prod .tg{font-weight:700;margin-bottom:10px}
-.prod p{color:#c3c3dc;margin-bottom:16px}
-.feat{list-style:none;padding:0;display:grid;gap:7px;margin-bottom:22px;font-size:.94rem}
-.feat li{padding-left:24px;position:relative}
-.feat li::before{content:"";position:absolute;left:0;top:.5em;width:12px;height:12px;border-radius:50%;background:var(--c)}
-.pl{font-size:1.05rem;margin-bottom:14px}
-.pl b{font:2rem "Bebas Neue",sans-serif;letter-spacing:.04em;color:var(--c)}
-.pl small{display:block;color:var(--mut);font-size:.85rem}
-.frame{background:#0a0a0f;border:2px solid var(--line);border-radius:14px;overflow:hidden}
-.frame .bar{display:flex;gap:6px;padding:9px 12px;background:#12121c}
-.frame .bar i{width:10px;height:10px;border-radius:50%;background:#4a4a66}
-.frame .im{aspect-ratio:8/5;background:#12121c;position:relative}
-.frame img{width:100%;height:100%;object-fit:cover;display:block}
-.pv{position:absolute;top:10px;right:10px;background:#000c;color:#ffd700;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em}
+.from b{color:var(--ink);font-size:1.4rem}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.pills a{text-decoration:none;font-size:.85rem;font-weight:600;background:#fff;border:1px solid var(--line);border-left:5px solid var(--c);border-radius:8px;padding:6px 12px}
+.frame{background:var(--ink);border-radius:18px;padding:9px;box-shadow:0 24px 60px #0c1a2b30}
+.im{aspect-ratio:8/5;border-radius:10px;overflow:hidden;background:#17283d;position:relative;display:grid;place-items:center;color:#9fb0c6;font-size:.9rem;text-align:center;padding:20px}
+.im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pv{position:absolute;top:10px;right:10px;background:#000b;color:#ffd24a;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:6px}
 .cap{display:flex;align-items:center;gap:10px;margin-top:12px}
-.cap p{flex:1;margin:0;font-size:.92rem;color:#c3c3dc}
-.arr{width:38px;height:38px;border-radius:50%;border:2px solid var(--c);background:transparent;color:var(--c);font-size:1.1rem;cursor:pointer}
-.arr:hover{background:var(--c);color:#0a0a0f}
-.dots{display:flex;gap:6px;justify-content:center;margin-top:10px}
-.dots button{width:10px;height:10px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}
-.dots button.on{background:var(--c)}
-.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
-.why div{border-left:4px solid var(--acc);padding-left:16px}
-.why h3{font-size:1.7rem}
-.why p{color:var(--mut);font-size:.95rem}
-.alt{background:#0d0d14;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.tog{display:inline-flex;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:4px;margin-bottom:30px}
-.tog button{border:0;background:transparent;color:var(--text);font:700 .95rem "DM Sans",sans-serif;padding:10px 24px;border-radius:10px;cursor:pointer}
-.tog button[aria-pressed=true]{background:var(--acc);color:#0a0a0a}
-.plans{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
-.plan{background:var(--card);border:2px solid var(--c);border-radius:22px;padding:26px 22px;display:flex;flex-direction:column}
-.plan h3{font-size:1.9rem;color:var(--c)}
-.plan .pr{font:3.2rem/1.1 "Bebas Neue",sans-serif;letter-spacing:.03em}
-.plan .u{color:var(--mut);font-size:.88rem;margin-bottom:14px;min-height:2.6em}
-.plan .tr{color:#2dd4a0;font-size:.85rem;font-weight:700;margin-bottom:10px}
-.plan ul{padding-left:18px;font-size:.92rem;margin-bottom:20px;flex:1;color:#c3c3dc}
-.fine{color:var(--mut);font-size:.88rem;margin-top:22px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;list-style:none;padding:0;counter-reset:s}
-.steps li{counter-increment:s;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:22px}
-.steps li::before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--acc);color:#0a0a0a;font:1.3rem "Bebas Neue";margin-bottom:10px}
+.cap p{flex:1;font-size:.9rem;color:var(--mut)}
+.cap button{width:38px;height:38px;border-radius:10px;border:2px solid var(--c);background:transparent;color:var(--c);cursor:pointer;font-size:1.1rem}
+.cap button:hover{background:var(--c);color:#fff}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:8px}
+.dots button{width:9px;height:9px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}
+.dots .on{background:var(--c)}
+.offer{background:var(--ink);color:#fff;text-align:center;padding:14px 0;font-size:.95rem}
+.offer a{color:#ffd24a;font-weight:700}
+section{padding:72px 0}
+h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:10px}
+.sub{color:var(--mut);max-width:40em;margin-bottom:30px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tabs button{border:2px solid var(--line);background:#fff;border-radius:10px;padding:10px 18px;font:700 .9rem Sora,sans-serif;cursor:pointer;color:var(--ink)}
+.tabs button[aria-pressed=true]{background:var(--c);border-color:var(--c);color:#fff}
+.panel{display:grid;grid-template-columns:1fr 1.1fr;gap:38px;align-items:center;background:#fff;border-top:8px solid var(--c);border-radius:16px;padding:34px}
+.panel h3{font-size:2.1rem;color:var(--c);margin:6px 0 8px}
+.tg{font-weight:600;margin-bottom:8px}
+.panel p{color:var(--mut);margin-bottom:14px}
+.feat{list-style:none;padding:0;display:grid;gap:7px;margin-bottom:18px;font-size:.92rem}
+.feat li{padding-left:22px;position:relative}
+.feat li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:10px;border-radius:2px;background:var(--c)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chips span{background:var(--bg);border-radius:6px;padding:3px 12px;font-size:.82rem;font-weight:600}
+.pl{margin-bottom:16px}
+.pl b{font-size:2rem;color:var(--c)}
+.pl small{display:block;color:var(--mut);font-size:.84rem}
+.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tog{display:inline-flex;background:var(--bg);border-radius:12px;padding:4px;margin-bottom:28px}
+.tog button{border:0;background:transparent;color:var(--ink);font:700 .9rem Sora,sans-serif;padding:10px 22px;border-radius:9px;cursor:pointer}
+.tog button[aria-pressed=true]{background:var(--ink);color:#fff}
+.plans{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.plan{background:#fff;border:1px solid var(--line);border-top:8px solid var(--c);border-radius:14px;padding:22px 20px;display:flex;flex-direction:column}
+.plan h3{font-size:1.2rem;color:var(--c)}
+.plan .pr{font-size:2.3rem;font-weight:800;margin-top:6px}
+.plan .u{color:var(--mut);font-size:.82rem;margin-bottom:10px;min-height:2.6em}
+.plan .tr{color:#0a8a63;font-size:.82rem;font-weight:700;margin-bottom:8px}
+.plan ul{padding-left:18px;font-size:.88rem;margin-bottom:18px;flex:1;color:var(--mut)}
+.fine{color:var(--mut);font-size:.86rem;margin-top:20px;max-width:46em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.steps{list-style:none;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;padding-left:48px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800}
 .steps b{display:block}
-.steps span{color:var(--mut);font-size:.94rem}
+.steps span{color:var(--mut);font-size:.92rem}
+.hw{background:var(--ink);color:#fff;border-radius:16px;padding:30px;align-self:start}
+.hw p{color:#b9c6d8;margin:10px 0 20px}
+.hw .btn{background:#fff;border-color:#fff}
 form{display:grid;gap:14px;max-width:560px}
-label{display:grid;gap:5px;font-weight:500;font-size:.92rem}
-input,textarea,select{font:inherit;padding:12px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--text);width:100%}
+label{display:grid;gap:5px;font-weight:600;font-size:.9rem}
+input,textarea{font:inherit;padding:12px;border-radius:10px;border:2px solid var(--line);background:#fff;color:var(--ink);width:100%}
 textarea{min-height:100px}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.msg{min-height:1.4em;font-weight:500}
-.msg.ok{color:#2dd4a0}
-.msg.bad{color:#ff7a7a}
+.msg{min-height:1.4em;font-weight:600}
+.msg.ok{color:#0a8a63}
+.msg.bad{color:#d6336c}
 button[disabled]{opacity:.55;cursor:wait}
-footer{background:#08080c;border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:.9rem}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
-footer .logo{font-size:1.2rem}
-footer .logo img{height:30px}
+footer{background:var(--ink);color:#b9c6d8;padding:28px 0;font-size:.9rem}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+footer .logo{color:#fff;font-size:1.1rem}
 footer a{margin-right:16px}
-footer .logo{margin-right:0}
-@media(max-width:860px){.hero .wrap,.prod{grid-template-columns:1fr}.prod:nth-of-type(even) .txt{order:0}nav a.h{display:none}section{padding:52px 0}.prod{padding:22px}.showcase .mark{height:100%}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tile{transition:none}.tile:hover{transform:none}}
+@media(max-width:860px){.hero .w,.panel,.two{grid-template-columns:1fr}nav a:not(.btn){display:none}section{padding:52px 0}.panel{padding:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-<a class="logo" href="#top" aria-label="CBSystem home"><img src="logo.svg" alt=""><span><b>CBS</b>ystem</span></a>
-<nav aria-label="Main"><a class="h" href="#products">Products</a><a class="h" href="#pricing">Pricing</a><a class="h" href="#hardware">Hardware</a><a class="btn p" href="checkout.html" style="padding:9px 18px">Start free trial</a></nav>
+<header><div class="w">
+<a class="logo" href="#top" aria-label="CBS System home"><img src="logo.svg" alt="">CBS System</a>
+<nav aria-label="Main"><a href="#products">Products</a><a href="#pricing">Pricing</a><a href="#hardware">Hardware</a><a class="btn p" href="checkout.html" style="padding:9px 18px">Start free trial</a></nav>
 </div></header>
-
 <main id="top">
-<div class="hero"><div class="wrap">
+<div class="hero"><div class="w">
 <div>
 <span class="badge" id="badge"></span>
-<h1>Run the till, the team and the <em>payroll</em> from one place.</h1>
-<p class="lead">Affordable business software for UK shops, restaurants, bars, pet care and factories. Point of sale, clock-in, holidays and payroll, designed to work together. <span id="actmsg"></span></p>
-<div class="cta"><a class="btn p" href="#pricing">See pricing</a><a class="btn o" href="#products" style="--c:#fff">See the products</a></div>
+<h1>Software that runs your shop, salon, restaurant and team.</h1>
+<p class="lead">Simple business software for UK shops, restaurants, salons, barbers and pet care. Pick what you need and add more later. <span id="actmsg"></span></p>
+<div class="row"><a class="btn p" href="#pricing">See pricing</a><a class="btn" href="#products">See the products</a></div>
 <p class="from" id="from"></p>
+<div class="pills" id="pills"></div>
 </div>
-<div class="showcase">
-<img class="mark" src="logo.svg" alt="">
-<div class="tiles" id="tiles" aria-label="Products"></div>
-</div>
+<div id="hero-slides" aria-label="Product screenshots"></div>
 </div></div>
+<div class="offer" id="offer" hidden><div class="w"></div></div>
 
-<div class="offer" id="offer" hidden><div class="wrap"></div></div>
-
-<section id="products" style="padding-top:56px">
-<div class="wrap">
-<h2 class="s">Everything your business runs on</h2>
-<p class="sub">Start with one product and add more later. They share staff and data, so nothing is typed in twice.</p>
-<div id="prods"></div>
+<section id="products">
+<div class="w">
+<h2>Choose your product</h2>
+<p class="sub">Each product has its own screens, features and price. Staff and data are shared, so nothing is typed in twice.</p>
+<div class="tabs" id="tabs" role="group" aria-label="Products"></div>
+<div id="panel"></div>
 </div>
 </section>
 
-<section class="alt">
-<div class="wrap">
-<h2 class="s">Why businesses choose CBSystem</h2>
-<p class="sub">Built by people who work with real shops, restaurants and factories.</p>
-<div class="why">
-<div><h3>Free trial, no card</h3><p id="whytrial"></p></div>
-<div><h3>Low prices, no surprises</h3><p>Simple monthly prices. Pay yearly and save the equivalent of 2 months. Setup is included.</p></div>
-<div><h3>Software only</h3><p>You only pay for the software. Need hardware? We can supply it to suit your business.</p></div>
-<div><h3>Fast activation</h3><p id="actp"></p></div>
-</div>
-</div>
-</section>
-
-<section id="pricing">
-<div class="wrap">
-<h2 class="s">Simple prices. Monthly or yearly.</h2>
-<p class="sub">Try free for 14 days, then pick the way you like to pay. Every plan includes setup for your business.</p>
+<section id="pricing" class="alt">
+<div class="w">
+<h2>Simple prices, monthly or yearly</h2>
+<p class="sub">Try free for 14 days, then pick how you like to pay. Every plan includes setup.</p>
 <div class="tog" role="group" aria-label="Payment type"><button id="bm" aria-pressed="true">Monthly</button><button id="by" aria-pressed="false">Yearly (save 2 months)</button></div>
 <div class="plans" id="plans"></div>
 <p class="fine" id="vat"></p>
 </div>
 </section>
 
-<section id="hardware" class="alt">
-<div class="wrap">
-<h2 class="s" id="hwt">Hardware on request</h2>
-<p class="sub" id="hwp"></p>
-<a class="btn p" href="#contact">Ask for a hardware quote</a>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<h2 class="s">From trial to live</h2>
+<section id="hardware">
+<div class="w two">
+<div>
+<h2>From trial to live</h2>
 <p class="sub">No waiting for a salesperson.</p>
 <ol class="steps">
 <li><b>Start your free trial</b><span>14 days free. No card needed.</span></li>
-<li><b>We set you up</b><span>We load your menu, products and staff.</span></li>
+<li><b>We set you up</b><span>We load your menu, services, products and staff.</span></li>
 <li><b>Try it in your business</b><span>Use it for real, with our help if you need it.</span></li>
 <li><b>Keep it or walk away</b><span>Choose monthly or yearly, or stop at no cost.</span></li>
 </ol>
 </div>
+<div class="hw"><h2 id="hwt">Hardware on request</h2><p id="hwp"></p><a class="btn" href="#contact">Ask for a hardware quote</a></div>
+</div>
 </section>
 
 <section id="contact" class="alt">
-<div class="wrap">
-<h2 class="s">Questions? Ask for a demo</h2>
+<div class="w">
+<h2>Questions? Ask for a demo</h2>
 <p class="sub">Tell us what you run, or what hardware you need. We reply within one working day.</p>
 <form id="f">
 <label>Your name<input name="name" required maxlength="120" autocomplete="name"></label>
@@ -215,89 +179,96 @@ footer .logo{margin-right:0}
 </div>
 </section>
 </main>
-
-<footer><div class="wrap">
-<a class="logo" href="#top" aria-label="CBSystem home"><img src="logo.svg" alt=""><span><b>CBS</b>ystem</span></a>
-<div>&copy; <span id="y"></span> CBSystem. All rights reserved.</div>
+<footer><div class="w">
+<a class="logo" href="#top" aria-label="CBS System home"><img src="logo.svg" alt="" style="height:28px">CBS System</a>
+<div>&copy; <span id="y"></span> CBS System. All rights reserved.</div>
 <div><a href="checkout.html">Start free trial</a><a id="em" href="#"></a></div>
 </div></footer>
 
 <script src="site-config.js"></script>
 <script>
-if(typeof SITE==="undefined"){
- document.body.innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:30px;text-align:center"><div><img src="logo.svg" alt="CBSystem" style="height:90px"><p style="margin-top:14px">Sorry, the page could not load. Please refresh, or email info@cbsystem.co.uk</p></div></main>';
-}else{
-SITE.products=(SITE.products||[]).filter(function(p){return !p.hidden});
 function e(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-if(SITE.comingSoon){
- document.title='CBSystem | Coming soon';
- var m=document.createElement('meta');m.name='robots';m.content='noindex';document.head.appendChild(m);
- document.body.innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:30px;text-align:center"><div style="max-width:760px;width:100%"><img src="logo.svg" alt="CBSystem" style="height:110px"><div style="font:800 2.2rem DM Sans,sans-serif;margin-top:10px"><span style="color:var(--acc)">CBS</span><span style="font-weight:400">ystem</span></div><h1 style="margin:18px 0 12px">'+e(SITE.comingSoonTitle||'Coming soon')+'</h1><p class="lead" style="margin:0 auto 22px">'+e(SITE.comingSoonText||'We are updating our website. Please check back soon.')+'</p><p><a href="mailto:'+e(SITE.email)+'" style="color:var(--acc);font-weight:700">'+e(SITE.email)+'</a></p></div></main>';
+if(typeof SITE==="undefined"){
+ document.body.innerHTML='<p style="padding:40px;text-align:center">Sorry, the page could not load. Please refresh, or email admin@cbsystem.co.uk</p>';
+}else if(SITE.comingSoon){
+ document.title='CBS System | Coming soon';
+ document.body.innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:30px;text-align:center"><div><img src="logo.svg" alt="CBS System" style="height:90px"><h1 style="margin:16px 0 10px">'+e(SITE.comingSoonTitle)+'</h1><p>'+e(SITE.comingSoonText)+'</p><p style="margin-top:14px"><a href="mailto:'+e(SITE.email)+'" style="font-weight:700">'+e(SITE.email)+'</a></p></div></main>';
 }else{
-var $=function(i){return document.getElementById(i)},C=SITE.currency||'£',mode='m';
-var T=SITE.trial||{enabled:true,days:14,title:'14-day free trial',text:'Try everything free for 14 days. No card needed.'};
+var $=function(i){return document.getElementById(i)},C=SITE.currency||'£',mode='m',T=SITE.trial||{enabled:false};
+var P=(SITE.products||[]).filter(function(p){return !p.hidden});
 function fmt(v){return v!==''&&v!=null&&!isNaN(v)?C+v:v}
+
+/* One slideshow used for the hero and for every product */
+function slider(box,sl,col){
+ clearInterval(box._t);box.style.setProperty('--c',col);
+ if(!sl.length){box.innerHTML='';return}
+ box.innerHTML='<div class="frame"><div class="im"><span class="ph">Screenshot coming soon</span><img alt="" hidden><span class="pv" hidden>Preview design</span></div></div><div class="cap"><button aria-label="Previous screen">&#8592;</button><p></p><button aria-label="Next screen">&#8594;</button></div><div class="dots">'+sl.map(function(_,i){return'<button aria-label="Screen '+(i+1)+'"></button>'}).join('')+'</div>';
+ var img=box.querySelector('img'),ph=box.querySelector('.ph'),pv=box.querySelector('.pv'),cp=box.querySelector('.cap p'),b=box.querySelectorAll('.cap button'),d=box.querySelectorAll('.dots button'),n=sl.length,i=0,h=0;
+ function go(k){i=(k+n)%n;var s=sl[i];
+  img.hidden=true;ph.hidden=false;
+  img.onload=function(){img.hidden=false;ph.hidden=true};img.onerror=function(){img.hidden=true;ph.hidden=false};
+  img.src=s[0];img.alt=s[1];cp.textContent=s[1];pv.hidden=!s[2];
+  d.forEach(function(x,j){x.className=j===i?'on':''})}
+ b[0].onclick=function(){go(i-1)};b[1].onclick=function(){go(i+1)};
+ d.forEach(function(x,j){x.onclick=function(){go(j)}});
+ if(n<2){b[0].hidden=b[1].hidden=true;box.querySelector('.dots').hidden=true}
+ go(0);
+ if(n>1&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  box.onmouseenter=function(){h=1};box.onmouseleave=function(){h=0};
+  box._t=setInterval(function(){if(!h&&!document.hidden)go(i+1)},4500);
+ }
+}
+
 $('y').textContent=new Date().getFullYear();
-$('em').href='mailto:'+SITE.email;$('em').textContent=SITE.email;$('vat').textContent=SITE.vatNote||'';
-$('actmsg').textContent=SITE.activation||'';$('actp').textContent=SITE.activation||'';
-
-/* free trial badge and text */
-if(T.enabled){$('badge').textContent=(T.title||'14-day free trial')+' · No card needed';$('whytrial').textContent=T.text||''}
-else{$('badge').hidden=true;$('whytrial').textContent='Choose a plan and we set you up.'}
-
-/* startup offer */
+$('em').href='mailto:'+SITE.email;$('em').textContent=SITE.email;
+$('vat').textContent=SITE.vatNote||'';$('actmsg').textContent=SITE.activation||'';
+$('badge').textContent=T.enabled?(T.title||'14-day free trial')+', no card needed':'Software only, hardware on request';
+$('from').innerHTML='Plans from <b>'+C+e(SITE.fromPrice||'3.99')+'</b> a month';
 var O=SITE.startupOffer;
-if(O&&O.enabled){var ob=$('offer');ob.hidden=false;ob.firstElementChild.innerHTML='<b>'+e(O.title||'Startup offer')+':</b> '+e(O.text||'')+' <a href="#contact" style="color:#ffd700;font-weight:700">Ask us</a>'}
-
-/* hardware */
+if(O&&O.enabled){$('offer').hidden=false;$('offer').firstElementChild.innerHTML='<b>'+e(O.title)+':</b> '+e(O.text)+' <a href="#contact">Ask us</a>'}
 var H=SITE.hardware;
-if(H){$('hwt').textContent=H.title||'Hardware on request';$('hwp').textContent=H.text||''}else{$('hardware').hidden=true}
+if(H){$('hwt').textContent=H.title;$('hwp').textContent=H.text}
 
-var mins=SITE.products.map(function(p){return parseFloat(p.monthly)}).filter(function(n){return n>0});
-$('from').innerHTML='Plans from <b>'+C+Math.min.apply(null,mins).toFixed(2)+'</b> a month'+(T.enabled?'. '+e(T.title||'')+', no card needed.':'.');
-
-$('tiles').innerHTML=SITE.products.slice(0,6).map(function(p){return'<a class="tile" href="#p-'+e(p.id)+'" style="--c:'+e(p.color)+'"><span>'+p.icon+'</span><b>'+e(p.name.split(' and ')[0])+'</b><small>'+e(p.short||'')+'</small></a>'}).join('');
+/* Home page slides: latest real screenshots from every product */
+var all=[];
+P.forEach(function(p){(p.slides||[]).forEach(function(s){if(!s[2])all.push([s[0],p.name+': '+s[1],false])})});
+slider($('hero-slides'),all,'#1f5eff');
+$('pills').innerHTML=P.map(function(p){return'<a href="#products" data-go="'+e(p.id)+'" style="--c:'+e(p.color)+'">'+p.icon+' '+e(p.name)+'</a>'}).join('');
 
 function buy(p,t){return'checkout.html?p='+encodeURIComponent(p.id)+'&t='+t+(T.enabled?'&trial=1':'')}
 
-$('prods').innerHTML=SITE.products.map(function(p){
+/* Product tabs */
+$('tabs').innerHTML=P.map(function(p){return'<button data-id="'+e(p.id)+'" aria-pressed="false">'+p.icon+' '+e(p.name)+'</button>'}).join('');
+function show(id){
+ var p=P.filter(function(x){return x.id===id})[0]||P[0];if(!p)return;
+ Array.prototype.forEach.call($('tabs').children,function(b){b.setAttribute('aria-pressed',b.dataset.id===p.id);b.style.setProperty('--c',p.color)});
  var yr=p.yearly?'<small>or '+fmt(p.yearly)+' '+e(p.yearlyUnit||'per year')+'</small>':'';
- var hs=p.slides&&p.slides.length;return'<article class="prod'+(hs?'':' solo')+'" id="p-'+e(p.id)+'" style="--c:'+e(p.color)+'"><div class="txt"><div class="ic">'+p.icon+'</div><h3>'+e(p.name)+'</h3><div class="tg">'+e(p.tagline)+'</div><p>'+e(p.intro)+'</p><ul class="feat">'+p.features.map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><div class="pl">From <b>'+fmt(p.monthly)+'</b> '+e(p.monthlyUnit)+yr+'</div><a class="btn o" href="'+buy(p,'m')+'">'+e(p.cta)+'</a></div>'
- +(!hs?'':'<div data-show="'+e(p.id)+'"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="im"><img alt=""><span class="pv" hidden>Preview design</span></div></div><div class="cap"><button class="arr" aria-label="Previous screen">&#8592;</button><p></p><button class="arr" aria-label="Next screen">&#8594;</button></div><div class="dots">'+p.slides.map(function(_,i){return'<button aria-label="Screen '+(i+1)+'"></button>'}).join('')+'</div></div>')+'</article>';
-}).join('');
+ $('panel').innerHTML='<article class="panel" style="--c:'+e(p.color)+'"><div><h3>'+e(p.name)+'</h3><div class="tg">'+e(p.tagline)+'</div><p>'+e(p.intro)+'</p><ul class="feat">'+p.features.map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul>'+(p.variations&&p.variations.length?'<div class="chips">'+p.variations.map(function(v){return'<span>'+e(v)+'</span>'}).join('')+'</div>':'')+'<div class="pl">From <b>'+fmt(p.monthly)+'</b> '+e(p.monthlyUnit)+yr+'</div><a class="btn" href="'+buy(p,'m')+'">'+e(p.cta)+'</a></div><div id="pv"></div></article>';
+ slider($('pv'),p.slides||[],p.color);
+}
+$('tabs').onclick=function(ev){var b=ev.target.closest('button');if(b)show(b.dataset.id)};
+document.addEventListener('click',function(ev){var a=ev.target.closest('[data-go]');if(a)show(a.dataset.go)});
+show(P[0]&&P[0].id);
 
-SITE.products.forEach(function(p){
- if(!p.slides||!p.slides.length)return;
- var box=document.querySelector('[data-show="'+p.id+'"]'),img=box.querySelector('img'),pv=box.querySelector('.pv'),cap=box.querySelector('.cap p'),dots=box.querySelectorAll('.dots button'),arrs=box.querySelectorAll('.arr'),n=p.slides.length,i=0,hover=false;
- function show(k){i=(k+n)%n;var s=p.slides[i];img.src=s[0];img.alt=s[1];cap.textContent=s[1];pv.hidden=!s[2];dots.forEach(function(d,j){d.className=j===i?'on':''})}
- arrs[0].onclick=function(){show(i-1)};arrs[1].onclick=function(){show(i+1)};
- dots.forEach(function(d,j){d.onclick=function(){show(j)}});
- if(n<2){arrs[0].hidden=arrs[1].hidden=true;box.querySelector('.dots').hidden=true}
- show(0);
- if(n>1&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
-  box.onmouseenter=box.onfocusin=function(){hover=true};box.onmouseleave=box.onfocusout=function(){hover=false};
-  setInterval(function(){if(!hover&&!document.hidden)show(i+1)},5000);
- }
-});
-
+/* Pricing */
 function render(){
  var yearly=mode==='y';
- $('plans').innerHTML=SITE.products.map(function(p){
+ $('plans').innerHTML=P.map(function(p){
   var useY=yearly&&p.yearly,v=useY?fmt(p.yearly):fmt(p.monthly),u=useY?(p.yearlyUnit||'per year'):p.monthlyUnit,t=useY?'y':'m';
-  return'<div class="plan" style="--c:'+e(p.color)+'"><h3>'+e(p.name)+'</h3><div class="pr">'+e(v)+'</div><div class="u">'+e(u)+'</div>'+(T.enabled?'<div class="tr">'+e(T.title||'')+', no card</div>':'')+'<ul>'+p.planFeatures.map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><a class="btn o" href="'+buy(p,t)+'">'+e(p.cta)+'</a></div>'}).join('')
- +(SITE.custom?'<div class="plan" style="--c:#ffffff"><h3>'+e(SITE.custom.title)+'</h3><div class="pr">'+e(SITE.custom.price)+'</div><div class="u">'+e(SITE.custom.unit)+'</div><ul>'+SITE.custom.bullets.map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><a class="btn o" href="#contact">Tell us what you need</a></div>':'');
+  return'<div class="plan" style="--c:'+e(p.color)+'"><h3>'+e(p.name)+'</h3><div class="pr">'+e(v)+'</div><div class="u">'+e(u)+'</div>'+(T.enabled?'<div class="tr">'+e(T.title||'')+', no card</div>':'')+'<ul>'+p.planFeatures.map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><a class="btn" href="'+buy(p,t)+'">'+e(p.cta)+'</a></div>'}).join('')
+ +(SITE.custom?'<div class="plan" style="--c:#0c1a2b"><h3>'+e(SITE.custom.title)+'</h3><div class="pr">'+e(SITE.custom.price)+'</div><div class="u">'+e(SITE.custom.unit)+'</div><ul>'+SITE.custom.bullets.map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><a class="btn" href="#contact">Tell us what you need</a></div>':'');
 }
 $('bm').onclick=function(){mode='m';$('bm').setAttribute('aria-pressed',true);$('by').setAttribute('aria-pressed',false);render()};
 $('by').onclick=function(){mode='y';$('by').setAttribute('aria-pressed',true);$('bm').setAttribute('aria-pressed',false);render()};
 render();
 
-/* Enquiry form: saved in Supabase through the cbs-home Edge Function; falls back to the visitor's email app if that fails */
+/* Enquiry form: saved through the cbs-home Edge Function; falls back to the visitor's email app */
 $('f').addEventListener('submit',function(ev){
  ev.preventDefault();var f=ev.target,btn=$('send'),msg=$('fmsg');
  var data={type:'enquiry',name:f.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),message:f.msg.value.trim(),website:f.website.value,page:location.href};
  function mailto(){
   var b='Name: '+data.name+'\nEmail: '+data.email+'\nPhone: '+data.phone+'\n\n'+data.message;
-  location.href='mailto:'+SITE.email+'?subject='+encodeURIComponent('CBSystem enquiry from '+data.name)+'&body='+encodeURIComponent(b);
+  location.href='mailto:'+SITE.email+'?subject='+encodeURIComponent('CBS System enquiry from '+data.name)+'&body='+encodeURIComponent(b);
  }
  if(!SITE.api){mailto();return}
  btn.disabled=true;msg.className='msg';msg.textContent='Sending...';
@@ -306,7 +277,6 @@ $('f').addEventListener('submit',function(ev){
   .then(function(){msg.className='msg ok';msg.textContent='Thank you. We have your enquiry and will reply within one working day.';f.reset();btn.disabled=false})
   .catch(function(){msg.className='msg bad';msg.textContent='We could not send that automatically, so your email app is opening instead.';btn.disabled=false;setTimeout(mailto,900)});
 });
-}
 }
 </script>
 </body>

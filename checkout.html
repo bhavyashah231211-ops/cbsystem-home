@@ -3,68 +3,67 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Checkout | CBSystem</title>
+<title>Checkout | CBS System</title>
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0f;--card:#1e1e2e;--line:#2a2a40;--text:#f0f0f8;--mut:#9a9ab8;--acc:#ff7a00}
+:root{--bg:#eef2f7;--ink:#0c1a2b;--mut:#56657a;--line:#d5dde8;--acc:#1f5eff}
 *{box-sizing:border-box;margin:0}
-body{font-family:"DM Sans",system-ui,Arial,sans-serif;background:radial-gradient(900px 500px at 20% -5%,#2a140d,transparent),var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
-:focus-visible{outline:3px solid #ffd700;outline-offset:2px}
-.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:.04em}
-header{background:#12121c;border-bottom:1px solid var(--line)}
-header .wrap{display:flex;justify-content:space-between;align-items:center;height:70px}
-.logo{display:inline-flex;align-items:center;gap:10px;font-family:"DM Sans",system-ui,sans-serif;font-size:1.6rem;letter-spacing:.5px;text-decoration:none;color:#fff;line-height:1}
-.logo img{height:42px;width:auto;display:block}
-.logo b{font-weight:800;color:var(--acc)}
-.logo span{font-weight:400}
-header a.b{color:#c8c8e0;text-decoration:none;font-weight:500}
-h1{font-size:clamp(2.6rem,6vw,4rem);line-height:1;margin:36px 0 8px}
-.lead{color:var(--mut);margin-bottom:28px}
+[hidden]{display:none!important}
+body{font:400 1rem/1.65 Sora,system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.w{max-width:1100px;margin:0 auto;padding:0 20px}
+h1,h2{font-weight:800;line-height:1.1;letter-spacing:-.025em}
+header{background:#fff;border-bottom:1px solid var(--line)}
+header .w{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1.25rem;text-decoration:none;color:var(--ink)}
+.logo img{height:34px;width:auto}
+header a.b{text-decoration:none;font-weight:600;font-size:.92rem;color:var(--ink)}
+h1{font-size:clamp(2.2rem,5vw,3.2rem);margin:34px 0 8px}
+.lead{color:var(--mut);margin-bottom:26px}
 .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;padding-bottom:70px;align-items:start}
-.box{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:24px;margin-bottom:20px}
-.box h2{font-size:1.9rem;margin-bottom:14px}
-.tog{display:inline-flex;background:#12121c;border:2px solid var(--line);border-radius:14px;padding:4px;margin-bottom:16px}
-.tog button{border:0;background:transparent;color:var(--text);font:700 .95rem "DM Sans",sans-serif;padding:9px 22px;border-radius:10px;cursor:pointer}
-.tog button[aria-pressed=true]{background:var(--acc);color:#0a0a0a}
-.item{display:flex;align-items:center;gap:14px;border:2px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px;cursor:pointer}
-.item.on{border-color:var(--c);background:#232336}
+.box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:20px}
+.box h2{font-size:1.4rem;margin-bottom:14px}
+.tog{display:inline-flex;background:var(--bg);border-radius:12px;padding:4px;margin-bottom:16px}
+.tog button{border:0;background:transparent;color:var(--ink);font:700 .9rem Sora,sans-serif;padding:9px 20px;border-radius:9px;cursor:pointer}
+.tog button[aria-pressed=true]{background:var(--ink);color:#fff}
+.item{display:flex;align-items:center;gap:14px;border:2px solid var(--line);border-left:8px solid var(--c);border-radius:12px;padding:14px;margin-bottom:10px;cursor:pointer}
+.item.on{border-color:var(--c);background:var(--bg)}
 .item input{width:20px;height:20px;accent-color:var(--c)}
 .item .n{flex:1}
 .item b{display:block}
 .item small{color:var(--mut)}
-.item .pr{font:1.8rem "Bebas Neue",sans-serif;letter-spacing:.03em;color:var(--c);text-align:right}
+.item .pr{font-weight:800;font-size:1.3rem;color:var(--c);text-align:right}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-label{display:grid;gap:5px;font-weight:500;font-size:.92rem;margin-bottom:12px}
-input[type=text],input[type=email],input[type=tel],select,textarea{font:inherit;padding:12px;border-radius:12px;border:2px solid var(--line);background:#12121c;color:var(--text);width:100%}
+label{display:grid;gap:5px;font-weight:600;font-size:.9rem;margin-bottom:12px}
+input[type=text],input[type=email],input[type=tel],textarea{font:inherit;padding:12px;border-radius:10px;border:2px solid var(--line);background:#fff;color:var(--ink);width:100%}
 textarea{min-height:80px}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .sum{position:sticky;top:16px}
-.sum .l{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+.sum .l{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
 .sum .t{display:flex;justify-content:space-between;align-items:baseline;padding-top:14px}
-.sum .t b{font:2.6rem "Bebas Neue",sans-serif;color:#2dd4a0;letter-spacing:.03em}
-.note{background:#12281f;border:2px solid #2dd4a0;border-radius:14px;padding:14px;font-size:.93rem;margin:16px 0}
-.btn{display:block;width:100%;text-align:center;padding:14px 22px;border-radius:12px;font:700 1rem "DM Sans",sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer;background:var(--acc);color:#0a0a0a}
-.btn:hover{background:#ff9633}
-.btn.g{background:transparent;border-color:#2dd4a0;color:#2dd4a0;margin-top:10px}
+.sum .t b{font-size:2.2rem;font-weight:800}
+.note{background:#e6f6ef;border-left:6px solid #0a8a63;border-radius:8px;padding:14px;font-size:.9rem;margin:16px 0}
+.btn{display:block;width:100%;text-align:center;padding:14px 22px;border-radius:10px;font:700 1rem Sora,sans-serif;text-decoration:none;border:2px solid var(--ink);cursor:pointer;background:var(--ink);color:#fff}
+.btn:hover{background:var(--acc);border-color:var(--acc)}
+.btn.g{background:transparent;border-color:#0a8a63;color:#0a8a63;margin-top:10px}
 .btn[disabled]{opacity:.55;cursor:wait}
 .fine{color:var(--mut);font-size:.82rem;margin-top:12px}
-.err{color:#ff7a7a;font-size:.9rem;min-height:1.2em;margin-bottom:8px}
-#done{display:none;text-align:center;padding:50px 0 90px}
-#done h1{color:#2dd4a0}
+.err{color:#d6336c;font-size:.9rem;font-weight:600;min-height:1.2em;margin-bottom:8px}
+#done{display:none;text-align:center;padding:40px 0 90px}
+#done h1{color:#0a8a63}
 #done .box{max-width:620px;margin:24px auto;text-align:left}
-.ref{display:inline-block;background:#12121c;border:2px dashed #2dd4a0;border-radius:12px;padding:8px 18px;font:1.8rem "Bebas Neue",sans-serif;letter-spacing:.08em;color:#2dd4a0;margin-top:8px}
-@media(max-width:860px){.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.sum{position:static}}
+.ref{display:inline-block;background:#fff;border:2px dashed #0a8a63;border-radius:10px;padding:8px 18px;font-size:1.6rem;font-weight:800;letter-spacing:.08em;color:#0a8a63;margin-top:8px}
+@media(max-width:860px){.grid,.row{grid-template-columns:1fr}.sum{position:static}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><a class="logo" href="index.html" aria-label="CBSystem home"><img src="logo.svg" alt=""><span><b>CBS</b>ystem</span></a><a class="b" href="index.html">&larr; Back to website</a></div></header>
+<header><div class="w"><a class="logo" href="index.html" aria-label="CBS System home"><img src="logo.svg" alt="">CBS System</a><a class="b" href="index.html">&larr; Back to website</a></div></header>
 
-<div class="wrap" id="shop">
+<div class="w" id="shop">
 <h1>Checkout</h1>
 <p class="lead" id="act"></p>
 <div class="grid">
@@ -81,7 +80,7 @@ textarea{min-height:80px}
 <div class="row"><label>Email<input type="email" name="email" required maxlength="200" autocomplete="email"></label>
 <label>Phone<input type="tel" name="phone" required maxlength="40" autocomplete="tel"></label></div>
 <label>Business address<input type="text" name="addr" required maxlength="300" autocomplete="street-address"></label>
-<label>Anything we should know? (menu, number of staff, number of tills)<textarea name="msg" maxlength="3000"></textarea></label>
+<label>Anything we should know? (menu, services, number of staff, users or screens)<textarea name="msg" maxlength="3000"></textarea></label>
 <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 <label style="grid-template-columns:auto 1fr;align-items:start;gap:10px"><input type="checkbox" name="terms" required style="width:20px;height:20px;margin-top:3px"><span>I agree to the Terms of Service and Privacy Policy.</span></label>
 </div>
@@ -99,14 +98,14 @@ textarea{min-height:80px}
 </div>
 </div>
 
-<div class="wrap" id="done">
+<div class="w" id="done">
 <h1>Order received</h1>
 <p class="lead" id="doneact"></p>
 <div id="refwrap" style="display:none"><div>Your order reference</div><div class="ref" id="ref"></div></div>
 <div class="box"><h2>What happens next</h2>
 <ol style="padding-left:20px;display:grid;gap:8px">
 <li>Complete payment using the button below if you see one. Otherwise we email you an invoice.</li>
-<li>We load your menu, products and staff.</li>
+<li>We load your menu, services, products and staff.</li>
 <li id="act3"></li>
 <li>You receive your login details by email.</li>
 </ol>
@@ -119,7 +118,7 @@ textarea{min-height:80px}
 <script src="site-config.js"></script>
 <script>
 if(typeof SITE==="undefined"){
- document.body.innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:30px;text-align:center"><div><img src="logo.svg" alt="CBSystem" style="height:90px"><p style="margin-top:14px">Sorry, checkout could not load. Please refresh, or email info@cbsystem.co.uk</p></div></main>';
+ document.body.innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:30px;text-align:center"><div><img src="logo.svg" alt="CBS System" style="height:90px"><p style="margin-top:14px">Sorry, checkout could not load. Please refresh, or email admin@cbsystem.co.uk</p></div></main>';
 }else{
 SITE.products=SITE.products.filter(function(p){return !p.hidden});
 if(SITE.comingSoon){location.replace('index.html');}
@@ -127,7 +126,6 @@ var $=function(i){return document.getElementById(i)},C=SITE.currency||'£',mode=
 var T=SITE.trial||{enabled:false};
 var q=new URLSearchParams(location.search),sel={};
 function sh(k){return String(k==null?'':k).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-/* a product can be bought yearly only if it has a yearly price */
 function can(p,m){return m==='m'||(p.yearly!==''&&p.yearly!=null)}
 function raw(p,m){return m==='m'?p.monthly:p.yearly}
 function unit(p,m){return m==='m'?p.monthlyUnit:p.yearlyUnit}
@@ -174,7 +172,7 @@ $('f').addEventListener('submit',function(e){
  function mailto(){
   var lines=chosen.map(function(p){return'- '+p.name+': '+label(p,m)+' ('+unit(p,m)+')'}).join('\n');
   var body='NEW ORDER\n\nBusiness: '+data.business+'\nContact: '+data.contact_name+'\nEmail: '+data.email+'\nPhone: '+data.phone+'\nAddress: '+data.address+'\nBilling: '+(m==='m'?'Monthly':'Yearly')+'\nFree trial: '+(T.enabled?'Yes':'No')+'\n\nProducts:\n'+lines+'\n\nTotal: '+$('tot').textContent+' '+$('per').textContent+'\n\nNotes: '+data.notes;
-  location.href='mailto:'+SITE.orderEmail+'?subject='+encodeURIComponent('CBSystem order: '+data.business)+'&body='+encodeURIComponent(body);
+  location.href='mailto:'+SITE.orderEmail+'?subject='+encodeURIComponent('CBS System order: '+data.business)+'&body='+encodeURIComponent(body);
  }
  if(!SITE.api){showDone('',true,chosen,m);mailto();return}
  btn.disabled=true;btn.textContent='Placing order...';
