@@ -103,7 +103,7 @@ footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;ali
 <script src="site-config.js"></script>
 <script>
 (function(){
-var S=window.SITE,app=document.getElementById('app');
+var S=(typeof SITE!=='undefined')?SITE:null,app=document.getElementById('app');
 if(!S){app.innerHTML='<div class="cs"><p>Sorry, the site could not load. Please refresh, or email admin@cbsystem.co.uk</p></div>';return}
 var C=S.currency||'£',P=S.products.filter(function(p){return !p.hidden}),mode='m';
 function e(v){return String(v==null?'':v).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
