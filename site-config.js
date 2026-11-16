@@ -1,6 +1,6 @@
-/* CBS System SITE SETTINGS. Edit prices, text and slides here.
-   One email address is used for everything: admin@cbsystem.co.uk
-   "api" is the Supabase Edge Function (index.ts) that receives orders and enquiries. */
+/* CBS System SITE SETTINGS. Edit with editor.html (open it on your computer) or by hand.
+   Plans: each product can have plans (Starter, Standard, Pro) and a "matrix" comparing them.
+   Prices marked as placeholders are starting points: change them to your real prices. */
 const SITE = {
   "comingSoon": false,
   "comingSoonTitle": "Coming soon",
@@ -10,7 +10,7 @@ const SITE = {
   "email": "admin@cbsystem.co.uk",
   "orderEmail": "admin@cbsystem.co.uk",
   "currency": "£",
-  "fromPrice": "3.99",
+  "fromPrice": "5.99",
   "activation": "Your system is set up within 2 to 7 days of your order being confirmed.",
   "vatNote": "All prices exclude VAT. Setup for your menu, services, products and staff is included. More users, screens or staff can be added to any plan.",
   "trial": {"enabled": true, "days": 14, "title": "14-day free trial", "text": "Try everything free for 14 days. No card needed. Cancel any time."},
@@ -24,7 +24,7 @@ const SITE = {
       "tagline": "Till and stock control for supermarkets and convenience stores.",
       "intro": "Sell fast at the till, receive and count stock in the back, and see profit and VAT from the owner dashboard.",
       "features": ["Touch till with barcode scanning by scanner or phone camera", "Returns, voids, discounts and cash drawer control", "Multi-location stock, transfers and stocktakes", "Low stock alerts and stock value at cost", "Owner dashboard with sales, profit, VAT and refunds", "Staff PIN login with Owner, Manager, Till and Stock roles"],
-      "variations": ["1 to 2 users", "1 to 2 screens"],
+      "variations": ["Starter", "Standard", "Pro"],
       "slides": [
         ["screenshots/shop-till.jpg", "Till: product grid, basket and one-touch charge"],
         ["screenshots/shop-stock.jpg", "Stock: receive goods, transfer and stocktake"],
@@ -32,8 +32,22 @@ const SITE = {
         ["screenshots/shop-products.jpg", "Products: prices, barcodes and categories"],
         ["screenshots/shop-reports.jpg", "Reports: see how the business is performing"]
       ],
-      "monthly": "9.99", "monthlyUnit": "per month, 1 user, 1 screen", "yearly": "99", "yearlyUnit": "per year, 1 user, 1 screen (save 2 months)",
+      "monthly": "9.99", "monthlyUnit": "per month", "yearly": "99", "yearlyUnit": "per year (save 2 months)",
       "oneoff": "", "oneoffUnit": "", "planFeatures": ["Barcode checkout and receipts", "Multi-location stock control", "Owner dashboard and reports"],
+      "plans": [
+        {"id": "starter", "name": "Starter", "monthly": "9.99", "yearly": "99", "payMonthly": "", "payYearly": ""},
+        {"id": "standard", "name": "Standard", "monthly": "19.99", "yearly": "199", "payMonthly": "", "payYearly": ""},
+        {"id": "pro", "name": "Pro", "monthly": "34.99", "yearly": "349", "payMonthly": "", "payYearly": ""}
+      ],
+      "matrix": [
+        ["Stock screens", "Basic: Intake only", "Full: Intake, Transfer, Stocktake, Locations", "Full"],
+        ["Card terminal settings", "No", "Yes", "Yes"],
+        ["Reports", "Basic: Sales and Stock", "Full", "Full, with Excel export"],
+        ["Owner dashboard (multi-shop)", "No", "Yes", "Yes"],
+        ["Max products", "500", "5,000", "No limit"],
+        ["Max staff logins", "3", "10", "No limit"],
+        ["Max devices", "1", "3", "No limit"]
+      ],
       "cta": "Start free trial", "payMonthly": "", "payYearly": "", "payOneoff": ""
     },
     {
@@ -41,7 +55,7 @@ const SITE = {
       "tagline": "Till, waiter, kitchen, bar and self-order kiosk working as one.",
       "intro": "Waiters send orders from the table, the kitchen and bar see their own tickets instantly, and the owner watches the whole floor live.",
       "features": ["Seven stations from one launcher: Till, Waiter, Kitchen, Bar, Owner, Customer display and Kiosk", "Live floor plan with Restaurant and Bar areas", "Kitchen and bar displays with order timers", "Split bills, discounts, move table and refunds", "Bookings and a voids log", "Owner dashboard with live revenue and running tabs"],
-      "variations": ["1 to 2 users", "1 to 2 screens"],
+      "variations": ["Starter", "Standard", "Pro"],
       "slides": [
         ["screenshots/rest-launcher.jpg", "Seven stations, one launcher"],
         ["screenshots/rest-till.jpg", "Till: menu, tables and order in one screen"],
@@ -50,8 +64,26 @@ const SITE = {
         ["screenshots/rest-bar.jpg", "Bar display: drinks queue with done buttons"],
         ["screenshots/rest-owner.jpg", "Owner dashboard: live tables and revenue"]
       ],
-      "monthly": "39.99", "monthlyUnit": "per month, 1 user, 1 screen", "yearly": "399", "yearlyUnit": "per year, 1 user, 1 screen (save 2 months)",
+      "monthly": "39.99", "monthlyUnit": "per month", "yearly": "399", "yearlyUnit": "per year (save 2 months)",
       "oneoff": "", "oneoffUnit": "", "planFeatures": ["Tables, kitchen and bar displays", "Split bills, discounts and refunds", "Kiosk and second screen on request"],
+      "plans": [
+        {"id": "starter", "name": "Starter", "monthly": "39.99", "yearly": "399", "payMonthly": "", "payYearly": ""},
+        {"id": "standard", "name": "Standard", "monthly": "59.99", "yearly": "599", "payMonthly": "", "payYearly": ""},
+        {"id": "pro", "name": "Pro", "monthly": "89.99", "yearly": "899", "payMonthly": "", "payYearly": ""}
+      ],
+      "matrix": [
+        ["POS till", "Yes", "Yes", "Yes"],
+        ["QR table ordering", "No", "Yes", "Yes"],
+        ["Takeaway link", "No", "No", "Yes"],
+        ["Kitchen and bar screens", "No", "Yes", "Yes"],
+        ["Bookings", "No", "No", "Yes"],
+        ["Reports", "Basic", "Full", "Full"],
+        ["SumUp cards", "No", "Yes", "Yes"],
+        ["Owner dashboard", "No", "Yes", "Yes"],
+        ["Max tables", "15", "40", "No limit"],
+        ["Max staff logins", "5", "15", "No limit"],
+        ["Max devices", "1", "3", "No limit"]
+      ],
       "cta": "Start free trial", "payMonthly": "", "payYearly": "", "payOneoff": ""
     },
     {
@@ -77,14 +109,32 @@ const SITE = {
       "cta": "Start free trial", "payMonthly": "", "payYearly": "", "payOneoff": ""
     },
     {
-      "id": "clockin", "icon": "⏱️", "name": "Clock-in Staff App", "color": "#0ca678", "short": "NFC and attendance",
-      "tagline": "Staff tap an NFC tag to clock in. See who is in, who is late and hours worked.",
-      "intro": "Staff clock in and out with an NFC tag we provide, or from their own phone. Managers see the whole team at a glance.",
-      "features": ["NFC tag clock-in, tags provided by us", "Clock in, clock out and breaks", "Live view of who is on shift, on break or late", "Timesheets and weekly totals", "Attendance reports with Excel export"],
-      "variations": ["1 to 10 staff"],
+      "id": "clockin", "icon": "⏱️", "name": "Clock-in Staff App", "color": "#0ca678", "short": "NFC, holidays and payroll",
+      "tagline": "Staff clock in, request holidays and get paid right. Payroll estimates and payslips included on higher plans.",
+      "intro": "Staff clock in and out with an NFC tag we provide, or from their own phone. Managers see the whole team, approve overtime and holidays, and run payroll.",
+      "features": ["Clock in, clock out and overtime approvals", "Holiday requests and team calendar", "Payroll estimates with PAYE, NI and pension", "Payslip PDFs sent by email", "NFC tag clock-in with location check", "Live view of who is on shift, on break or late"],
+      "variations": ["Starter", "Standard", "Pro"],
       "slides": [["screenshots/mock-clockin.jpg", "Today: who is in, on break or late", true]],
-      "monthly": "5.99", "monthlyUnit": "per month, up to 5 staff", "yearly": "59", "yearlyUnit": "per year, up to 5 staff (save 2 months)",
-      "oneoff": "", "oneoffUnit": "", "planFeatures": ["NFC tags provided", "Timesheets and reports", "Excel export"],
+      "monthly": "5.99", "monthlyUnit": "per month", "yearly": "59", "yearlyUnit": "per year (save 2 months)",
+      "oneoff": "", "oneoffUnit": "", "planFeatures": ["Clock-in and holidays", "Payroll and payslips on Standard", "Bank files on Pro"],
+      "plans": [
+        {"id": "starter", "name": "Starter", "monthly": "5.99", "yearly": "59", "payMonthly": "", "payYearly": ""},
+        {"id": "standard", "name": "Standard", "monthly": "12.99", "yearly": "129", "payMonthly": "", "payYearly": ""},
+        {"id": "pro", "name": "Pro", "monthly": "24.99", "yearly": "249", "payMonthly": "", "payYearly": ""}
+      ],
+      "matrix": [
+        ["Clock in and out, overtime approvals", "Yes", "Yes", "Yes"],
+        ["Holiday requests and calendar", "Yes", "Yes", "Yes"],
+        ["Payroll estimates (PAYE, NI, pension)", "No", "Yes", "Yes"],
+        ["Payslip PDFs and email", "No", "Yes", "Yes"],
+        ["Bank payment, PAYE and pension files", "No", "No", "Yes"],
+        ["NFC clock-in and location check", "No", "Yes", "Yes"],
+        ["Departments", "Up to 3", "Unlimited", "Unlimited"],
+        ["Automatic backup", "No", "Yes", "Yes"],
+        ["Owner dashboard (multi-site)", "No", "Yes", "Yes"],
+        ["Max employees", "10", "50", "No limit"],
+        ["Max devices", "2", "5", "No limit"]
+      ],
       "cta": "Start free trial", "payMonthly": "", "payYearly": "", "payOneoff": ""
     }
   ],
