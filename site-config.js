@@ -20,7 +20,7 @@ const SITE = {
   "logins": [],
   "products": [
     {
-      "id": "shop", "icon": "🛒", "name": "Shop POS", "color": "#e8590c", "short": "Barcode, stock and till",
+      "id": "shop", "photo": "media/shop.jpg", "icon": "🛒", "name": "Shop POS", "color": "#e8590c", "short": "Barcode, stock and till",
       "tagline": "Till and stock control for supermarkets and convenience stores.",
       "intro": "Sell fast at the till, receive and count stock in the back, and see profit and VAT from the owner dashboard.",
       "features": ["Touch till with barcode scanning by scanner or phone camera", "Returns, voids, discounts and cash drawer control", "Multi-location stock, transfers and stocktakes", "Low stock alerts and stock value at cost", "Owner dashboard with sales, profit, VAT and refunds", "Staff PIN login with Owner, Manager, Till and Stock roles"],
@@ -51,7 +51,7 @@ const SITE = {
       "cta": "Start free trial", "payMonthly": "", "payYearly": "", "payOneoff": ""
     },
     {
-      "id": "restaurant", "icon": "🍽️", "name": "Restaurant POS", "color": "#1c7ed6", "short": "Tables, kitchen and bar",
+      "id": "restaurant", "photo": "media/restaurant.jpg", "icon": "🍽️", "name": "Restaurant POS", "color": "#1c7ed6", "short": "Tables, kitchen and bar",
       "tagline": "Till, waiter, kitchen, bar and self-order kiosk working as one.",
       "intro": "Waiters send orders from the table, the kitchen and bar see their own tickets instantly, and the owner watches the whole floor live.",
       "features": ["Seven stations from one launcher: Till, Waiter, Kitchen, Bar, Owner, Customer display and Kiosk", "Live floor plan with Restaurant and Bar areas", "Kitchen and bar displays with order timers", "Split bills, discounts, move table and refunds", "Bookings and a voids log", "Owner dashboard with live revenue and running tabs"],
@@ -87,7 +87,7 @@ const SITE = {
       "cta": "Start free trial", "payMonthly": "", "payYearly": "", "payOneoff": ""
     },
     {
-      "id": "salon", "icon": "💈", "name": "Salon and Barber", "color": "#7048e8", "short": "Bookings and clients",
+      "id": "salon", "photo": "media/salon.jpg", "icon": "💈", "name": "Salon and Barber", "color": "#7048e8", "short": "Bookings and clients",
       "tagline": "Appointments, client records and a till for salons and barbers.",
       "intro": "Keep every client in one place, fill the diary and take payment at the chair.",
       "features": ["Appointment diary by stylist or barber", "Client records with notes and visit history", "Services, prices and staff schedules", "Appointment reminders", "Built-in till for services and products"],
@@ -98,7 +98,7 @@ const SITE = {
       "cta": "Start free trial", "payMonthly": "", "payYearly": "", "payOneoff": ""
     },
     {
-      "id": "pet", "icon": "🐾", "name": "Pet Care", "color": "#d6336c", "short": "Bookings and pets",
+      "id": "pet", "photo": "media/pet.jpg", "icon": "🐾", "name": "Pet Care", "color": "#d6336c", "short": "Bookings and pets",
       "tagline": "Appointments, pet records and a till for pet shops, groomers and kennels.",
       "intro": "Keep every owner and pet in one place, book grooming and boarding, and remind clients when vaccinations are due.",
       "features": ["Owner and pet records with notes", "Grooming, vet and boarding appointments", "Vaccination and flea treatment tracking", "Visit reminders", "Boarding check-in and check-out", "Built-in till for products and services"],
@@ -109,7 +109,7 @@ const SITE = {
       "cta": "Start free trial", "payMonthly": "", "payYearly": "", "payOneoff": ""
     },
     {
-      "id": "clockin", "icon": "⏱️", "name": "Clock-in Staff App", "color": "#0ca678", "short": "NFC, holidays and payroll",
+      "id": "clockin", "photo": "media/clockin.jpg", "icon": "⏱️", "name": "Clock-in Staff App", "color": "#0ca678", "short": "NFC, holidays and payroll",
       "tagline": "Staff clock in, request holidays and get paid right. Payroll estimates and payslips included on higher plans.",
       "intro": "Staff clock in and out with an NFC tag we provide, or from their own phone. Managers see the whole team, approve overtime and holidays, and run payroll.",
       "features": ["Clock in, clock out and overtime approvals", "Holiday requests and team calendar", "Payroll estimates with PAYE, NI and pension", "Payslip PDFs sent by email", "NFC tag clock-in with location check", "Live view of who is on shift, on break or late"],

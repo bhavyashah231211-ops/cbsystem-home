@@ -73,6 +73,7 @@ h2{font-size:clamp(30px,4.4vw,50px);font-weight:800}
 .pc{border:1px solid var(--line);border-radius:18px;padding:26px;background:var(--black);display:flex;flex-direction:column;gap:10px}
 .pc .pv{font:800 44px var(--head);color:var(--c)}.pc .un{color:var(--mute);font-size:14px}
 .pc ul{list-style:none;display:grid;gap:6px;flex:1;margin:8px 0;color:var(--mute);font-size:15px}.pc li::before{content:"✓ ";color:var(--c)}
+.pls{display:grid;gap:6px}.pls a{display:flex;justify-content:space-between;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:15px}.pls a:hover{border-color:var(--c)}.pls b{color:var(--c)}
 .note{color:var(--mute);font-size:14px;margin-top:20px}
 /* steps / hardware */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px;counter-reset:s}
@@ -129,7 +130,7 @@ h+='<header class="hd"><nav class="w nav" aria-label="Main"><a class="logo" href
 h+='<section class="hero" id="hero" aria-label="CBS System products">';
 P.forEach(function(p,i){
  var s=p.slides&&p.slides[0]?p.slides[0][0]:'';
- h+='<article class="sl" style="--c:'+e(p.color)+';--g:'+e(p.color)+'55;background:linear-gradient(120deg,#050505 0%,#050505 45%,'+e(p.color)+'33 100%)"><div class="w in"><div><h1>'+e(p.name)+'<span>'+e(p.short)+'</span></h1><p>'+e(p.tagline)+'</p><div class="cta"><a class="btn btn-p" href="checkout.html?p='+e(p.id)+'">'+e(p.cta||'Start free trial')+'</a><a class="btn btn-g" href="#demo" data-demo="'+i+'">See it working</a></div></div>'+(s?'<div class="shot" role="img" aria-label="'+e(p.name)+' screen" style="background-image:url(\''+e(s)+'\')"></div>':'')+'</div></article>';
+ h+='<article class="sl" style="--c:'+e(p.color)+';--g:'+e(p.color)+'55;background:linear-gradient(90deg,rgba(5,5,5,.95) 0%,rgba(5,5,5,.78) 45%,rgba(5,5,5,.3) 100%)'+(p.photo?',url(\''+e(p.photo)+'\') center/cover':'')+',linear-gradient(120deg,#050505 0%,'+e(p.color)+'55 100%)"><div class="w in"><div><h1>'+e(p.name)+'<span>'+e(p.short)+'</span></h1><p>'+e(p.tagline)+'</p><div class="cta"><a class="btn btn-p" href="checkout.html?p='+e(p.id)+'">'+e(p.cta||'Start free trial')+'</a><a class="btn btn-g" href="#demo" data-demo="'+i+'">See it working</a></div></div>'+(s?'<div class="shot" role="img" aria-label="'+e(p.name)+' screen" style="background-image:url(\''+e(s)+'\')"></div>':'')+'</div></article>';
 });
 h+='<div class="w dots" id="dots" role="tablist" aria-label="Choose a slide"></div></section>';
 
@@ -193,7 +194,7 @@ function pricing(){
  $('bm').setAttribute('aria-pressed',mode==='m');$('by').setAttribute('aria-pressed',mode==='y');$('yn').hidden=mode!=='y';
  $('pr').innerHTML=P.map(function(p){
   var ok=mode==='m'||(p.yearly!==''&&p.yearly!=null),v=mode==='m'?p.monthly:p.yearly,u=mode==='m'?p.monthlyUnit:p.yearlyUnit;
-  return'<article class="pc" style="--c:'+e(p.color)+'"><h3>'+e(p.icon)+' '+e(p.name)+'</h3><div class="pv">'+(ok?money(v):'-')+'</div><div class="un">'+e(ok?u:'Monthly only')+'</div><ul>'+(p.planFeatures||[]).map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><a class="btn btn-p" href="checkout.html?p='+e(p.id)+'&t='+(ok?mode:'m')+'">'+e(p.cta||'Start free trial')+'</a></article>'}).join('')
+  return'<article class="pc" style="--c:'+e(p.color)+'"><h3>'+e(p.icon)+' '+e(p.name)+'</h3><div class="pv">'+(ok?money(v):'-')+'</div><div class="un">'+e(ok?u:'Monthly only')+'</div>'+(p.plans&&p.plans.length>1?'<div class="pls">'+p.plans.map(function(l){var lv=mode==='m'?l.monthly:l.yearly,lo=lv!==''&&lv!=null;return lo?'<a href="checkout.html?p='+e(p.id)+'&plan='+e(l.id)+'&t='+mode+'"><span>'+e(l.name)+'</span><b>'+money(lv)+'</b></a>':''}).join('')+'</div>':'')+'<ul>'+(p.planFeatures||[]).map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><a class="btn btn-p" href="checkout.html?p='+e(p.id)+'&t='+(ok?mode:'m')+'">'+e(p.cta||'Start free trial')+'</a></article>'}).join('')
   +'<article class="pc" style="--c:#ff7a00"><h3>🧩 '+e(X.title)+'</h3><div class="pv">'+e(X.price)+'</div><div class="un">'+e(X.unit)+'</div><ul>'+(X.bullets||[]).map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><a class="btn btn-p" href="#contact">Get a quote</a></article>'}
 $('bm').onclick=function(){mode='m';pricing()};$('by').onclick=function(){mode='y';pricing()};pricing();
 
