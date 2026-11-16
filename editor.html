@@ -81,7 +81,7 @@ function plan(p,i){var pl=p.plans[i],d=S('Plan: '+(pl.name||'new'));
  var x=el('button','x','Remove this plan');x.type='button';x.onclick=function(){p.plans.splice(i,1);build()};d.g.append(x);return d}
 function product(p,n){
  var d=S((p.icon||'')+' '+(p.name||'New product'));
- add(d,[F(p,'name','Name','t'),F(p,'id','Id (lowercase, no spaces)','t'),F(p,'icon','Icon (emoji)','t'),F(p,'color','Colour','col'),F(p,'photo','Hero photo (e.g. media/shop.jpg, leave blank for none)','t'),F(p,'short','Short label','t',1),F(p,'tagline','Tagline','t',1),F(p,'intro','Introduction','m',1),
+ add(d,[F(p,'name','Name','t'),F(p,'id','Id (lowercase, no spaces)','t'),F(p,'icon','Icon (emoji)','t'),F(p,'color','Colour','col'),F(p,'photos','Hero photos (one path per line, e.g. media/shop-1.jpg)','a',1),F(p,'short','Short label','t',1),F(p,'tagline','Tagline','t',1),F(p,'intro','Introduction','m',1),
   F(p,'features','Features (one per line)','a',1),F(p,'planFeatures','Pricing card bullets (one per line)','a',1),
   F(p,'slides','Screenshots (one per line: path | caption | true if it is a mock-up)','r',1),F(p,'cta','Button text','t'),F(p,'hidden','Hide this product from the site','c')]);
 
