@@ -3,281 +3,216 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CBS System | POS, Clock-in and Business Software for UK Businesses</title>
-<meta name="description" content="CBS System: shop POS, restaurant POS, salon and barber, pet care and staff clock-in software for UK businesses. Plans from £3.99 a month. 14-day free trial.">
+<title>CBS System | POS and business software for shops, restaurants, salons and more</title>
+<meta name="description" content="Shop POS, Restaurant POS, Salon and Barber, Pet Care and Staff Clock-in software. Start with a free trial.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta property="og:title" content="CBS System | Business software for UK businesses">
-<meta property="og:image" content="logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#eef2f7;--ink:#0c1a2b;--mut:#56657a;--line:#d5dde8;--acc:#1f5eff;--c:var(--acc)}
-*{box-sizing:border-box;margin:0}
+:root{--black:#050505;--panel:#141414;--line:rgba(255,255,255,.14);--orange:#ff7a00;--hi:#ff9a3d;--mute:#c4c4c9;--head:"Bricolage Grotesque","Arial Black",Arial,sans-serif;--body:"DM Sans",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--black);color:#fff;font:17px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--hi);outline-offset:3px;border-radius:6px}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth}
-body{font:400 1rem/1.65 Sora,system-ui,sans-serif;background:var(--bg);color:var(--ink)}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-.w{max-width:1160px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-weight:800;line-height:1.1;letter-spacing:-.025em}
-header{position:sticky;top:0;z-index:9;background:#eef2f7ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header .w{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1.25rem;text-decoration:none}
-.logo img{height:34px;width:auto}
-nav{display:flex;gap:24px;align-items:center}
-nav a:not(.btn){text-decoration:none;font-weight:600;font-size:.92rem}
-.btn{display:inline-block;padding:12px 24px;border-radius:10px;font:700 .92rem Sora,sans-serif;text-decoration:none;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
-.btn.p{background:var(--ink);color:#fff}
-.btn:hover{background:var(--c);border-color:var(--c);color:#fff}
-.hero{padding:60px 0 48px}
-.hero .w{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
-.badge{display:inline-block;background:#fff;border:1px solid var(--line);padding:5px 14px;border-radius:8px;font-weight:600;font-size:.85rem;margin-bottom:18px}
-h1{font-size:clamp(2.3rem,5vw,3.8rem)}
-.lead{font-size:1.05rem;color:var(--mut);margin:18px 0 26px;max-width:30em}
-.row{display:flex;gap:12px;flex-wrap:wrap}
-.from{margin-top:18px;color:var(--mut)}
-.from b{color:var(--ink);font-size:1.4rem}
-.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
-.pills a{text-decoration:none;font-size:.85rem;font-weight:600;background:#fff;border:1px solid var(--line);border-left:5px solid var(--c);border-radius:8px;padding:6px 12px}
-.frame{background:var(--ink);border-radius:18px;padding:9px;box-shadow:0 24px 60px #0c1a2b30}
-.im{aspect-ratio:8/5;border-radius:10px;overflow:hidden;background:#17283d;position:relative;display:grid;place-items:center;color:#9fb0c6;font-size:.9rem;text-align:center;padding:20px}
-.im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pv{position:absolute;top:10px;right:10px;background:#000b;color:#ffd24a;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:6px}
-.cap{display:flex;align-items:center;gap:10px;margin-top:12px}
-.cap p{flex:1;font-size:.9rem;color:var(--mut)}
-.cap button{width:38px;height:38px;border-radius:10px;border:2px solid var(--c);background:transparent;color:var(--c);cursor:pointer;font-size:1.1rem}
-.cap button:hover{background:var(--c);color:#fff}
-.dots{display:flex;gap:6px;justify-content:center;margin-top:8px}
-.dots button{width:9px;height:9px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}
-.dots .on{background:var(--c)}
-.offer{background:var(--ink);color:#fff;text-align:center;padding:14px 0;font-size:.95rem}
-.offer a{color:#ffd24a;font-weight:700}
-section{padding:72px 0}
-h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:10px}
-.sub{color:var(--mut);max-width:40em;margin-bottom:30px}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-.tabs button{border:2px solid var(--line);background:#fff;border-radius:10px;padding:10px 18px;font:700 .9rem Sora,sans-serif;cursor:pointer;color:var(--ink)}
-.tabs button[aria-pressed=true]{background:var(--c);border-color:var(--c);color:#fff}
-.panel{display:grid;grid-template-columns:1fr 1.1fr;gap:38px;align-items:center;background:#fff;border-top:8px solid var(--c);border-radius:16px;padding:34px}
-.panel h3{font-size:2.1rem;color:var(--c);margin:6px 0 8px}
-.tg{font-weight:600;margin-bottom:8px}
-.panel p{color:var(--mut);margin-bottom:14px}
-.feat{list-style:none;padding:0;display:grid;gap:7px;margin-bottom:18px;font-size:.92rem}
-.feat li{padding-left:22px;position:relative}
-.feat li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:10px;border-radius:2px;background:var(--c)}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.chips span{background:var(--bg);border-radius:6px;padding:3px 12px;font-size:.82rem;font-weight:600}
-.pl{margin-bottom:16px}
-.pl b{font-size:2rem;color:var(--c)}
-.pl small{display:block;color:var(--mut);font-size:.84rem}
-.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.tog{display:inline-flex;background:var(--bg);border-radius:12px;padding:4px;margin-bottom:28px}
-.tog button{border:0;background:transparent;color:var(--ink);font:700 .9rem Sora,sans-serif;padding:10px 22px;border-radius:9px;cursor:pointer}
-.tog button[aria-pressed=true]{background:var(--ink);color:#fff}
-.plans{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
-.plan{background:#fff;border:1px solid var(--line);border-top:8px solid var(--c);border-radius:14px;padding:22px 20px;display:flex;flex-direction:column}
-.plan h3{font-size:1.2rem;color:var(--c)}
-.plan .pr{font-size:2.3rem;font-weight:800;margin-top:6px}
-.plan .u{color:var(--mut);font-size:.82rem;margin-bottom:10px;min-height:2.6em}
-.plan .tr{color:#0a8a63;font-size:.82rem;font-weight:700;margin-bottom:8px}
-.plan ul{padding-left:18px;font-size:.88rem;margin-bottom:18px;flex:1;color:var(--mut)}
-.fine{color:var(--mut);font-size:.86rem;margin-top:20px;max-width:46em}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-.steps{list-style:none;padding:0;display:grid;gap:14px;counter-reset:s}
-.steps li{counter-increment:s;padding-left:48px;position:relative}
-.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800}
-.steps b{display:block}
-.steps span{color:var(--mut);font-size:.92rem}
-.hw{background:var(--ink);color:#fff;border-radius:16px;padding:30px;align-self:start}
-.hw p{color:#b9c6d8;margin:10px 0 20px}
-.hw .btn{background:#fff;border-color:#fff}
-form{display:grid;gap:14px;max-width:560px}
-label{display:grid;gap:5px;font-weight:600;font-size:.9rem}
-input,textarea{font:inherit;padding:12px;border-radius:10px;border:2px solid var(--line);background:#fff;color:var(--ink);width:100%}
-textarea{min-height:100px}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.msg{min-height:1.4em;font-weight:600}
-.msg.ok{color:#0a8a63}
-.msg.bad{color:#d6336c}
-button[disabled]{opacity:.55;cursor:wait}
-footer{background:var(--ink);color:#b9c6d8;padding:28px 0;font-size:.9rem}
-footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
-footer .logo{color:#fff;font-size:1.1rem}
-footer a{margin-right:16px}
-@media(max-width:860px){.hero .w,.panel,.two{grid-template-columns:1fr}nav a:not(.btn){display:none}section{padding:52px 0}.panel{padding:22px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.w{max-width:1240px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(30px,4.4vw,50px);font-weight:800}
+.sec{padding:90px 0}.sec.alt{background:var(--panel)}
+.eyebrow{color:var(--orange);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px;margin-bottom:10px}
+.sub{color:var(--mute);max-width:60ch;margin-top:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;border:2px solid var(--orange);transition:.2s}
+.btn-p{background:var(--orange);color:#120700}.btn-p:hover{background:var(--hi);border-color:var(--hi);transform:translateY(-2px)}
+.btn-g:hover{background:rgba(255,122,0,.16)}
+/* offer bar + header */
+.bar{background:var(--orange);color:#120700;text-align:center;font-weight:700;font-size:15px;padding:9px 16px}
+.hd{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;gap:28px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:10px;font:800 22px var(--head)}.logo img{height:40px;width:auto}
+.links{display:flex;gap:28px;margin-left:auto;list-style:none;font-weight:500}
+.links a{padding:6px 0;border-bottom:2px solid transparent}.links a:hover{color:var(--hi);border-color:var(--orange)}
+.nav .btn{padding:10px 22px}
+.mt{display:none;margin-left:auto;width:44px;height:44px;border-radius:10px;border:1px solid var(--line);font-size:22px}
+/* hero */
+.hero{position:relative;overflow:hidden;min-height:620px}
+.sl{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s,visibility .7s}
+.sl.on{opacity:1;visibility:visible}
+.sl .in{display:flex;align-items:center;justify-content:space-between;gap:40px;min-height:620px;padding-top:60px;padding-bottom:110px}
+.sl h1{font-size:clamp(38px,6vw,72px);font-weight:800}.sl h1 span{display:block;color:var(--c)}
+.sl p{margin:20px 0 30px;color:var(--mute);font-size:19px;max-width:46ch}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.shot{flex:0 0 auto;width:min(44vw,520px);aspect-ratio:16/10;border-radius:20px;border:10px solid #1b1b1b;background:#0c0c0c center/cover no-repeat;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 90px var(--g)}
+.dots{position:absolute;left:0;right:0;bottom:30px;display:flex;gap:10px}
+.dot{height:6px;flex:1;max-width:100px;border-radius:6px;background:rgba(255,255,255,.25);position:relative}
+.dot::before{content:"";position:absolute;inset:-14px 0}.dot.on{background:var(--orange)}
+/* strip */
+.strip{background:var(--panel);border-block:1px solid var(--line)}
+.strip .w{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:28px;padding-bottom:28px}
+.strip b{display:block;color:var(--hi)}.strip span{color:var(--mute);font-size:15px}
+/* products */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.card{background:var(--panel);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.sec.alt .card{background:var(--black)}
+.card .ic{font-size:34px}.card h3{font-size:24px}.card p{color:var(--mute)}
+.card ul{list-style:none;color:var(--mute);font-size:15px;display:grid;gap:6px;flex:1}
+.card li::before{content:"✓ ";color:var(--c);font-weight:700}
+.card .fr{font-weight:700}.card .fr b{color:var(--c);font-size:22px}
+/* viewer */
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 24px}
+.tabs button{padding:10px 18px;border-radius:999px;border:1px solid var(--line);font-weight:700}
+.tabs button[aria-pressed=true]{background:var(--orange);color:#120700;border-color:var(--orange)}
+.vw{display:grid;grid-template-columns:1.5fr .9fr;gap:30px;align-items:center}
+.scr{aspect-ratio:16/10;border-radius:18px;border:10px solid #1b1b1b;background:#0c0c0c center/contain no-repeat}
+.vc{display:flex;gap:10px;margin-top:20px}.vc button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);font-size:20px}.vc button:hover{background:var(--orange);color:#120700}
+/* pricing */
+.tog{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px;margin-top:26px}
+.tog button{padding:10px 22px;border-radius:999px;font-weight:700}.tog button[aria-pressed=true]{background:var(--orange);color:#120700}
+.pr{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.pc{border:1px solid var(--line);border-radius:18px;padding:26px;background:var(--black);display:flex;flex-direction:column;gap:10px}
+.pc .pv{font:800 44px var(--head);color:var(--c)}.pc .un{color:var(--mute);font-size:14px}
+.pc ul{list-style:none;display:grid;gap:6px;flex:1;margin:8px 0;color:var(--mute);font-size:15px}.pc li::before{content:"✓ ";color:var(--c)}
+.note{color:var(--mute);font-size:14px;margin-top:20px}
+/* steps / hardware */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px;counter-reset:s}
+.steps div{border-left:3px solid var(--orange);padding-left:16px;color:var(--mute)}
+.steps div::before{counter-increment:s;content:counter(s);display:block;font:800 40px var(--head);color:var(--orange)}
+.steps b{display:block;color:#fff}
+.hw{margin-top:40px;border:2px dashed var(--orange);border-radius:18px;padding:26px}.hw h3{font-size:24px;margin-bottom:6px}.hw p{color:var(--mute)}
+/* faq + form */
+details{border-bottom:1px solid var(--line);padding:18px 0}summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--orange);font-size:24px;line-height:1}details[open] summary::after{content:"−"}
+details p{color:var(--mute);margin-top:10px;max-width:70ch}
+.ct{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}
+form{display:grid;gap:14px}label{display:grid;gap:5px;font-weight:700;font-size:14px}
+input,textarea,select{font:inherit;padding:13px;border-radius:10px;border:2px solid var(--line);background:#0c0c0c;color:#fff;width:100%}
+textarea{min-height:110px}.hp{position:absolute;left:-9999px}
+#msg{font-weight:700;min-height:1.4em}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mute);font-size:15px}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+.cs{min-height:100vh;display:grid;place-items:center;text-align:center;padding:30px}
+@media(max-width:980px){.shot{display:none}.cards,.pr{grid-template-columns:1fr 1fr}.strip .w,.steps{grid-template-columns:1fr 1fr}.vw,.ct{grid-template-columns:1fr}
+.mt{display:block}.nav>.btn{display:none}.links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#050505;padding:8px 24px 20px;margin:0}.links.open{display:flex}.links a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}}
+@media(max-width:620px){.cards,.pr,.strip .w,.steps{grid-template-columns:1fr}.sec{padding:64px 0}.cta .btn{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sl{transition:none}}
 </style>
 </head>
 <body>
-<header><div class="w">
-<a class="logo" href="#top" aria-label="CBS System home"><img src="logo.svg" alt="">CBS System</a>
-<nav aria-label="Main"><a href="#products">Products</a><a href="#pricing">Pricing</a><a href="#hardware">Hardware</a><a class="btn p" href="checkout.html" style="padding:9px 18px">Start free trial</a></nav>
-</div></header>
-<main id="top">
-<div class="hero"><div class="w">
-<div>
-<span class="badge" id="badge"></span>
-<h1>Software that runs your shop, salon, restaurant and team.</h1>
-<p class="lead">Simple business software for UK shops, restaurants, salons, barbers and pet care. Pick what you need and add more later. <span id="actmsg"></span></p>
-<div class="row"><a class="btn p" href="#pricing">See pricing</a><a class="btn" href="#products">See the products</a></div>
-<p class="from" id="from"></p>
-<div class="pills" id="pills"></div>
-</div>
-<div id="hero-slides" aria-label="Product screenshots"></div>
-</div></div>
-<div class="offer" id="offer" hidden><div class="w"></div></div>
-
-<section id="products">
-<div class="w">
-<h2>Choose your product</h2>
-<p class="sub">Each product has its own screens, features and price. Staff and data are shared, so nothing is typed in twice.</p>
-<div class="tabs" id="tabs" role="group" aria-label="Products"></div>
-<div id="panel"></div>
-</div>
-</section>
-
-<section id="pricing" class="alt">
-<div class="w">
-<h2>Simple prices, monthly or yearly</h2>
-<p class="sub">Try free for 14 days, then pick how you like to pay. Every plan includes setup.</p>
-<div class="tog" role="group" aria-label="Payment type"><button id="bm" aria-pressed="true">Monthly</button><button id="by" aria-pressed="false">Yearly (save 2 months)</button></div>
-<div class="plans" id="plans"></div>
-<p class="fine" id="vat"></p>
-</div>
-</section>
-
-<section id="hardware">
-<div class="w two">
-<div>
-<h2>From trial to live</h2>
-<p class="sub">No waiting for a salesperson.</p>
-<ol class="steps">
-<li><b>Start your free trial</b><span>14 days free. No card needed.</span></li>
-<li><b>We set you up</b><span>We load your menu, services, products and staff.</span></li>
-<li><b>Try it in your business</b><span>Use it for real, with our help if you need it.</span></li>
-<li><b>Keep it or walk away</b><span>Choose monthly or yearly, or stop at no cost.</span></li>
-</ol>
-</div>
-<div class="hw"><h2 id="hwt">Hardware on request</h2><p id="hwp"></p><a class="btn" href="#contact">Ask for a hardware quote</a></div>
-</div>
-</section>
-
-<section id="contact" class="alt">
-<div class="w">
-<h2>Questions? Ask for a demo</h2>
-<p class="sub">Tell us what you run, or what hardware you need. We reply within one working day.</p>
-<form id="f">
-<label>Your name<input name="name" required maxlength="120" autocomplete="name"></label>
-<label>Email<input type="email" name="email" required maxlength="200" autocomplete="email"></label>
-<label>Phone<input type="tel" name="phone" maxlength="40" autocomplete="tel"></label>
-<label>Message<textarea name="msg" maxlength="3000"></textarea></label>
-<div class="hp" aria-hidden="true"><label>Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
-<button class="btn p" type="submit" id="send">Send enquiry</button>
-<div class="msg" id="fmsg" role="status" aria-live="polite"></div>
-</form>
-</div>
-</section>
-</main>
-<footer><div class="w">
-<a class="logo" href="#top" aria-label="CBS System home"><img src="logo.svg" alt="" style="height:28px">CBS System</a>
-<div>&copy; <span id="y"></span> CBS System. All rights reserved.</div>
-<div><a href="checkout.html">Start free trial</a><a id="em" href="#"></a></div>
-</div></footer>
-
+<div id="app"></div>
 <script src="site-config.js"></script>
 <script>
-function e(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-if(typeof SITE==="undefined"){
- document.body.innerHTML='<p style="padding:40px;text-align:center">Sorry, the page could not load. Please refresh, or email admin@cbsystem.co.uk</p>';
-}else if(SITE.comingSoon){
- document.title='CBS System | Coming soon';
- document.body.innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:30px;text-align:center"><div><img src="logo.svg" alt="CBS System" style="height:90px"><h1 style="margin:16px 0 10px">'+e(SITE.comingSoonTitle)+'</h1><p>'+e(SITE.comingSoonText)+'</p><p style="margin-top:14px"><a href="mailto:'+e(SITE.email)+'" style="font-weight:700">'+e(SITE.email)+'</a></p></div></main>';
-}else{
-var $=function(i){return document.getElementById(i)},C=SITE.currency||'£',mode='m',T=SITE.trial||{enabled:false};
-var P=(SITE.products||[]).filter(function(p){return !p.hidden});
-function fmt(v){return v!==''&&v!=null&&!isNaN(v)?C+v:v}
+(function(){
+var S=window.SITE,app=document.getElementById('app');
+if(!S){app.innerHTML='<div class="cs"><p>Sorry, the site could not load. Please refresh, or email admin@cbsystem.co.uk</p></div>';return}
+var C=S.currency||'£',P=S.products.filter(function(p){return !p.hidden}),mode='m';
+function e(v){return String(v==null?'':v).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function money(v){return isNaN(parseFloat(v))?e(v):C+e(v)}
+if(S.comingSoon){app.innerHTML='<div class="cs"><div><img src="logo.svg" alt="CBS System" style="height:110px"><h1 style="font-size:46px;margin:20px 0 10px">'+e(S.comingSoonTitle)+'</h1><p class="sub" style="margin:auto">'+e(S.comingSoonText)+'</p><p style="margin-top:18px"><a class="btn btn-g" href="mailto:'+e(S.email)+'">'+e(S.email)+'</a></p></div></div>';return}
 
-/* One slideshow used for the hero and for every product */
-function slider(box,sl,col){
- clearInterval(box._t);box.style.setProperty('--c',col);
- if(!sl.length){box.innerHTML='';return}
- box.innerHTML='<div class="frame"><div class="im"><span class="ph">Screenshot coming soon</span><img alt="" hidden><span class="pv" hidden>Preview design</span></div></div><div class="cap"><button aria-label="Previous screen">&#8592;</button><p></p><button aria-label="Next screen">&#8594;</button></div><div class="dots">'+sl.map(function(_,i){return'<button aria-label="Screen '+(i+1)+'"></button>'}).join('')+'</div>';
- var img=box.querySelector('img'),ph=box.querySelector('.ph'),pv=box.querySelector('.pv'),cp=box.querySelector('.cap p'),b=box.querySelectorAll('.cap button'),d=box.querySelectorAll('.dots button'),n=sl.length,i=0,h=0;
- function go(k){i=(k+n)%n;var s=sl[i];
-  img.hidden=true;ph.hidden=false;
-  img.onload=function(){img.hidden=false;ph.hidden=true};img.onerror=function(){img.hidden=true;ph.hidden=false};
-  img.src=s[0];img.alt=s[1];cp.textContent=s[1];pv.hidden=!s[2];
-  d.forEach(function(x,j){x.className=j===i?'on':''})}
- b[0].onclick=function(){go(i-1)};b[1].onclick=function(){go(i+1)};
- d.forEach(function(x,j){x.onclick=function(){go(j)}});
- if(n<2){b[0].hidden=b[1].hidden=true;box.querySelector('.dots').hidden=true}
- go(0);
- if(n>1&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
-  box.onmouseenter=function(){h=1};box.onmouseleave=function(){h=0};
-  box._t=setInterval(function(){if(!h&&!document.hidden)go(i+1)},4500);
- }
-}
+var T=S.trial||{},O=S.startupOffer||{},H=S.hardware||{},X=S.custom||{};
+var FAQ=[
+['Do I need a card for the free trial?','No. '+(T.text||'Try everything free first.')],
+['How long does setup take?',S.activation||''],
+['Do you sell hardware?',H.text||''],
+['Can I add more users, screens or staff?','Yes. More users, screens or staff can be added to any plan. Tell us what you need and we will quote it.'],
+['Are prices shown with VAT?','No. '+(S.vatNote||'All prices exclude VAT.')],
+['Can I pay yearly?',S.yearlyNote||'Yes, pay yearly and save.'],
+['Can I use more than one product?','Yes. Pick as many products as you like at checkout, or ask us for a bundle.']];
 
-$('y').textContent=new Date().getFullYear();
-$('em').href='mailto:'+SITE.email;$('em').textContent=SITE.email;
-$('vat').textContent=SITE.vatNote||'';$('actmsg').textContent=SITE.activation||'';
-$('badge').textContent=T.enabled?(T.title||'14-day free trial')+', no card needed':'Software only, hardware on request';
-$('from').innerHTML='Plans from <b>'+C+e(SITE.fromPrice||'3.99')+'</b> a month';
-var O=SITE.startupOffer;
-if(O&&O.enabled){$('offer').hidden=false;$('offer').firstElementChild.innerHTML='<b>'+e(O.title)+':</b> '+e(O.text)+' <a href="#contact">Ask us</a>'}
-var H=SITE.hardware;
-if(H){$('hwt').textContent=H.title;$('hwp').textContent=H.text}
+/* ---------- build page ---------- */
+var h='';
+if(O.enabled)h+='<div class="bar">'+e(O.title)+': '+e(O.text)+'</div>';
+h+='<header class="hd"><nav class="w nav" aria-label="Main"><a class="logo" href="#top" aria-label="CBS System home"><img src="logo.svg" alt="">CBS System</a><ul class="links" id="links"><li><a href="#products">Products</a></li><li><a href="#demo">See it working</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul><a class="btn btn-p" href="#pricing">'+e(T.enabled?T.title:'Get started')+'</a><button class="mt" id="mt" aria-label="Open menu" aria-expanded="false">&#9776;</button></nav></header><main id="top">';
 
-/* Home page slides: latest real screenshots from every product */
-var all=[];
-P.forEach(function(p){(p.slides||[]).forEach(function(s){if(!s[2])all.push([s[0],p.name+': '+s[1],false])})});
-slider($('hero-slides'),all,'#1f5eff');
-$('pills').innerHTML=P.map(function(p){return'<a href="#products" data-go="'+e(p.id)+'" style="--c:'+e(p.color)+'">'+p.icon+' '+e(p.name)+'</a>'}).join('');
-
-function buy(p,t){return'checkout.html?p='+encodeURIComponent(p.id)+'&t='+t+(T.enabled?'&trial=1':'')}
-
-/* Product tabs */
-$('tabs').innerHTML=P.map(function(p){return'<button data-id="'+e(p.id)+'" aria-pressed="false">'+p.icon+' '+e(p.name)+'</button>'}).join('');
-function show(id){
- var p=P.filter(function(x){return x.id===id})[0]||P[0];if(!p)return;
- Array.prototype.forEach.call($('tabs').children,function(b){b.setAttribute('aria-pressed',b.dataset.id===p.id);b.style.setProperty('--c',p.color)});
- var yr=p.yearly?'<small>or '+fmt(p.yearly)+' '+e(p.yearlyUnit||'per year')+'</small>':'';
- $('panel').innerHTML='<article class="panel" style="--c:'+e(p.color)+'"><div><h3>'+e(p.name)+'</h3><div class="tg">'+e(p.tagline)+'</div><p>'+e(p.intro)+'</p><ul class="feat">'+p.features.map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul>'+(p.variations&&p.variations.length?'<div class="chips">'+p.variations.map(function(v){return'<span>'+e(v)+'</span>'}).join('')+'</div>':'')+'<div class="pl">From <b>'+fmt(p.monthly)+'</b> '+e(p.monthlyUnit)+yr+'</div><a class="btn" href="'+buy(p,'m')+'">'+e(p.cta)+'</a></div><div id="pv"></div></article>';
- slider($('pv'),p.slides||[],p.color);
-}
-$('tabs').onclick=function(ev){var b=ev.target.closest('button');if(b)show(b.dataset.id)};
-document.addEventListener('click',function(ev){var a=ev.target.closest('[data-go]');if(a)show(a.dataset.go)});
-show(P[0]&&P[0].id);
-
-/* Pricing */
-function render(){
- var yearly=mode==='y';
- $('plans').innerHTML=P.map(function(p){
-  var useY=yearly&&p.yearly,v=useY?fmt(p.yearly):fmt(p.monthly),u=useY?(p.yearlyUnit||'per year'):p.monthlyUnit,t=useY?'y':'m';
-  return'<div class="plan" style="--c:'+e(p.color)+'"><h3>'+e(p.name)+'</h3><div class="pr">'+e(v)+'</div><div class="u">'+e(u)+'</div>'+(T.enabled?'<div class="tr">'+e(T.title||'')+', no card</div>':'')+'<ul>'+p.planFeatures.map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><a class="btn" href="'+buy(p,t)+'">'+e(p.cta)+'</a></div>'}).join('')
- +(SITE.custom?'<div class="plan" style="--c:#0c1a2b"><h3>'+e(SITE.custom.title)+'</h3><div class="pr">'+e(SITE.custom.price)+'</div><div class="u">'+e(SITE.custom.unit)+'</div><ul>'+SITE.custom.bullets.map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><a class="btn" href="#contact">Tell us what you need</a></div>':'');
-}
-$('bm').onclick=function(){mode='m';$('bm').setAttribute('aria-pressed',true);$('by').setAttribute('aria-pressed',false);render()};
-$('by').onclick=function(){mode='y';$('by').setAttribute('aria-pressed',true);$('bm').setAttribute('aria-pressed',false);render()};
-render();
-
-/* Enquiry form: saved through the cbs-home Edge Function; falls back to the visitor's email app */
-$('f').addEventListener('submit',function(ev){
- ev.preventDefault();var f=ev.target,btn=$('send'),msg=$('fmsg');
- var data={type:'enquiry',name:f.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),message:f.msg.value.trim(),website:f.website.value,page:location.href};
- function mailto(){
-  var b='Name: '+data.name+'\nEmail: '+data.email+'\nPhone: '+data.phone+'\n\n'+data.message;
-  location.href='mailto:'+SITE.email+'?subject='+encodeURIComponent('CBS System enquiry from '+data.name)+'&body='+encodeURIComponent(b);
- }
- if(!SITE.api){mailto();return}
- btn.disabled=true;msg.className='msg';msg.textContent='Sending...';
- fetch(SITE.api,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-  .then(function(r){return r.json().catch(function(){return{}}).then(function(j){if(!r.ok||!j.ok)throw new Error(j.error||'Request failed');return j})})
-  .then(function(){msg.className='msg ok';msg.textContent='Thank you. We have your enquiry and will reply within one working day.';f.reset();btn.disabled=false})
-  .catch(function(){msg.className='msg bad';msg.textContent='We could not send that automatically, so your email app is opening instead.';btn.disabled=false;setTimeout(mailto,900)});
+/* hero */
+h+='<section class="hero" id="hero" aria-label="CBS System products">';
+P.forEach(function(p,i){
+ var s=p.slides&&p.slides[0]?p.slides[0][0]:'';
+ h+='<article class="sl" style="--c:'+e(p.color)+';--g:'+e(p.color)+'55;background:linear-gradient(120deg,#050505 0%,#050505 45%,'+e(p.color)+'33 100%)"><div class="w in"><div><h1>'+e(p.name)+'<span>'+e(p.short)+'</span></h1><p>'+e(p.tagline)+'</p><div class="cta"><a class="btn btn-p" href="checkout.html?p='+e(p.id)+'">'+e(p.cta||'Start free trial')+'</a><a class="btn btn-g" href="#demo" data-demo="'+i+'">See it working</a></div></div>'+(s?'<div class="shot" role="img" aria-label="'+e(p.name)+' screen" style="background-image:url(\''+e(s)+'\')"></div>':'')+'</div></article>';
 });
-}
+h+='<div class="w dots" id="dots" role="tablist" aria-label="Choose a slide"></div></section>';
+
+/* strip */
+h+='<section class="strip"><div class="w"><div><b>Setup included</b><span>Menu, services, products and staff</span></div><div><b>'+e(T.enabled?T.title:'Simple plans')+'</b><span>No card needed</span></div><div><b>From '+C+e(S.fromPrice)+' a month</b><span>Excluding VAT</span></div><div><b>Software only</b><span>Hardware on request</span></div></div></section>';
+
+/* products */
+h+='<section class="sec" id="products"><div class="w"><p class="eyebrow">Products</p><h2>One system for every kind of business</h2><p class="sub">Pick the product that fits, or combine several.</p><div class="cards">';
+P.forEach(function(p){
+ h+='<article class="card" style="--c:'+e(p.color)+'"><div class="ic" aria-hidden="true">'+e(p.icon)+'</div><h3>'+e(p.name)+'</h3><p>'+e(p.tagline)+'</p><ul>'+(p.features||[]).slice(0,3).map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><p class="fr">From <b>'+money(p.monthly)+'</b> /month</p><a class="btn btn-g" href="checkout.html?p='+e(p.id)+'">'+e(p.cta||'Start free trial')+'</a></article>';
+});
+h+='<article class="card" style="--c:#ff7a00"><div class="ic" aria-hidden="true">🧩</div><h3>'+e(X.title)+'</h3><p>'+e(X.unit)+'</p><ul>'+(X.bullets||[]).map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><p class="fr"><b>'+e(X.price)+'</b></p><a class="btn btn-g" href="#contact">Talk to us</a></article></div></div></section>';
+
+/* viewer */
+h+='<section class="sec alt" id="demo"><div class="w"><p class="eyebrow">See it working</p><h2>Real screens, not promises</h2><div class="tabs" id="tabs"></div><div class="vw"><div class="scr" id="scr" role="img" aria-label="Screenshot"></div><div><h3 id="vt" style="font-size:28px"></h3><p class="sub" id="vi"></p><p class="sub" id="vc"></p><div class="vc"><button id="vp" aria-label="Previous screenshot">&#8592;</button><button id="vn" aria-label="Next screenshot">&#8594;</button></div></div></div></div></section>';
+
+/* pricing */
+h+='<section class="sec" id="pricing"><div class="w"><p class="eyebrow">Pricing</p><h2>Simple plans. Start free.</h2><p class="sub">'+e(T.enabled?T.text:'')+'</p><div class="tog" role="group" aria-label="Billing"><button id="bm" aria-pressed="true">Monthly</button><button id="by" aria-pressed="false">Yearly</button></div><p class="note" id="yn" hidden>'+e(S.yearlyNote)+'</p><div class="pr" id="pr"></div><p class="note">'+e(S.vatNote)+'</p></div></section>';
+
+/* steps + hardware */
+h+='<section class="sec alt"><div class="w"><p class="eyebrow">How it works</p><h2>Live in days, not weeks</h2><div class="steps"><div><b>Choose</b>Pick your products and start the free trial.</div><div><b>We set up</b>We load your menu, services, products and staff.</div><div><b>Log in</b>You get your login details by email.</div><div><b>Start selling</b>'+e(S.activation)+'</div></div><div class="hw"><h3>'+e(H.title)+'</h3><p>'+e(H.text)+'</p></div></div></section>';
+
+/* faq */
+h+='<section class="sec" id="faq"><div class="w"><p class="eyebrow">FAQ</p><h2>Questions we get asked</h2><div style="margin-top:30px">'+FAQ.map(function(q){return'<details><summary>'+e(q[0])+'</summary><p>'+e(q[1])+'</p></details>'}).join('')+'</div></div></section>';
+
+/* contact */
+h+='<section class="sec alt" id="contact"><div class="w ct"><div><p class="eyebrow">Contact</p><h2>Not sure which plan?</h2><p class="sub">Tell us about your business and we will reply by email.</p><p style="margin-top:18px"><a href="mailto:'+e(S.email)+'" style="color:var(--hi);font-weight:700">'+e(S.email)+'</a></p></div><form id="f" novalidate><div class="hp" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div><label>Business name<input name="biz" required maxlength="160" autocomplete="organization"></label><label>Your name<input name="name" required maxlength="120" autocomplete="name"></label><label>Email<input type="email" name="email" required maxlength="200" autocomplete="email"></label><label>Phone<input type="tel" name="phone" maxlength="40" autocomplete="tel"></label><label>What do you need?<textarea name="msg" required maxlength="3000"></textarea></label><div id="msg" role="alert"></div><button class="btn btn-p" type="submit" id="go">Send enquiry</button></form></div></section></main>';
+
+var L=S.legal||{},legal=[L.name,L.number&&'Company no. '+L.number,L.address,L.vat&&'VAT '+L.vat].filter(Boolean).join(' · ');
+h+='<footer><div class="w"><a class="logo" href="#top"><img src="logo.svg" alt="">CBS System</a><div>'+(legal?e(legal)+'<br>':'')+'<a href="mailto:'+e(S.email)+'">'+e(S.email)+'</a></div></div></footer>';
+app.innerHTML=h;
+
+/* ---------- behaviour ---------- */
+var $=function(i){return document.getElementById(i)};
+$('mt').onclick=function(){var o=$('links').classList.toggle('open');this.setAttribute('aria-expanded',o)};
+$('links').onclick=function(ev){if(ev.target.tagName==='A')$('links').classList.remove('open')};
+
+/* hero slider */
+var sl=[].slice.call(document.querySelectorAll('.sl')),dots=$('dots'),cur=0,timer;
+sl.forEach(function(_,i){var d=document.createElement('button');d.className='dot';d.setAttribute('role','tab');d.setAttribute('aria-label','Show '+P[i].name);d.onclick=function(){go(i);start()};dots.appendChild(d)});
+function go(n){cur=(n+sl.length)%sl.length;sl.forEach(function(s,i){s.classList.toggle('on',i===cur);dots.children[i].classList.toggle('on',i===cur)})}
+function start(){clearInterval(timer);if(!matchMedia('(prefers-reduced-motion:reduce)').matches)timer=setInterval(function(){go(cur+1)},6000)}
+$('hero').onmouseenter=function(){clearInterval(timer)};$('hero').onmouseleave=start;
+go(0);start();
+
+/* screenshot viewer */
+var vp=0,vi=0;
+function view(){var p=P[vp],s=p.slides||[],c=s[vi]||[];
+ [].forEach.call($('tabs').children,function(b,i){b.setAttribute('aria-pressed',i===vp)});
+ $('scr').style.backgroundImage=c[0]?"url('"+c[0]+"')":'none';$('scr').setAttribute('aria-label',c[1]||p.name);
+ $('vt').textContent=p.icon+' '+p.name;$('vi').textContent=p.intro||'';$('vc').textContent=c[1]?(vi+1)+' of '+s.length+': '+c[1]:'';
+ $('vp').hidden=$('vn').hidden=s.length<2}
+P.forEach(function(p,i){var b=document.createElement('button');b.textContent=p.name;b.onclick=function(){vp=i;vi=0;view()};$('tabs').appendChild(b)});
+$('vp').onclick=function(){var n=P[vp].slides.length;vi=(vi-1+n)%n;view()};
+$('vn').onclick=function(){vi=(vi+1)%P[vp].slides.length;view()};
+[].forEach.call(document.querySelectorAll('[data-demo]'),function(a){a.onclick=function(){vp=+a.dataset.demo;vi=0;view()}});
+view();
+
+/* pricing */
+function pricing(){
+ $('bm').setAttribute('aria-pressed',mode==='m');$('by').setAttribute('aria-pressed',mode==='y');$('yn').hidden=mode!=='y';
+ $('pr').innerHTML=P.map(function(p){
+  var ok=mode==='m'||(p.yearly!==''&&p.yearly!=null),v=mode==='m'?p.monthly:p.yearly,u=mode==='m'?p.monthlyUnit:p.yearlyUnit;
+  return'<article class="pc" style="--c:'+e(p.color)+'"><h3>'+e(p.icon)+' '+e(p.name)+'</h3><div class="pv">'+(ok?money(v):'-')+'</div><div class="un">'+e(ok?u:'Monthly only')+'</div><ul>'+(p.planFeatures||[]).map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><a class="btn btn-p" href="checkout.html?p='+e(p.id)+'&t='+(ok?mode:'m')+'">'+e(p.cta||'Start free trial')+'</a></article>'}).join('')
+  +'<article class="pc" style="--c:#ff7a00"><h3>🧩 '+e(X.title)+'</h3><div class="pv">'+e(X.price)+'</div><div class="un">'+e(X.unit)+'</div><ul>'+(X.bullets||[]).map(function(f){return'<li>'+e(f)+'</li>'}).join('')+'</ul><a class="btn btn-p" href="#contact">Get a quote</a></article>'}
+$('bm').onclick=function(){mode='m';pricing()};$('by').onclick=function(){mode='y';pricing()};pricing();
+
+/* enquiry form */
+$('f').addEventListener('submit',function(ev){
+ ev.preventDefault();var f=ev.target,m=$('msg'),b=$('go');
+ if(!f.biz.value.trim()||!f.name.value.trim()||!f.msg.value.trim()){m.textContent='Please fill in business name, your name and your message.';return}
+ if(!/^\S+@\S+\.\S+$/.test(f.email.value.trim())){m.textContent='Please enter a valid email address.';return}
+ m.textContent='';
+ var d={type:'enquiry',business:f.biz.value.trim(),contact_name:f.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),notes:f.msg.value.trim(),website:f.website.value,page:location.href};
+ function mail(){location.href='mailto:'+S.email+'?subject='+encodeURIComponent('CBS System enquiry: '+d.business)+'&body='+encodeURIComponent('Business: '+d.business+'\nName: '+d.contact_name+'\nEmail: '+d.email+'\nPhone: '+d.phone+'\n\n'+d.notes)}
+ if(!S.api){mail();return}
+ b.disabled=true;b.textContent='Sending...';
+ fetch(S.api,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+ .then(function(r){return r.json().catch(function(){return{}}).then(function(j){if(!r.ok||!j.ok)throw 0;return j})})
+ .then(function(){b.disabled=false;b.textContent='Send enquiry';f.reset();m.textContent='Thank you. We will reply by email soon.'})
+ .catch(function(){b.disabled=false;b.textContent='Send enquiry';m.textContent='Could not reach our system, opening your email app instead.';mail()});
+});
+})();
 </script>
 </body>
 </html>
