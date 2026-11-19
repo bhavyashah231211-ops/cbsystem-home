@@ -1,0 +1,31 @@
+/* CBS System warm cream theme. Load after the page's own <style>. */
+:root{--black:#FFF6EC;--panel:#FBE9D4;--line:rgba(17,17,17,.14);--hi:#C2410C;--mute:#4a4a4a}
+body{color:#111}
+.hd,header{background:#111!important;color:#fff}
+.hd .links a:hover{color:#ff9a3d}
+header a.b{color:#ddd}header .logo{color:#fff}
+.eyebrow{color:#C2410C}
+.sl{background:linear-gradient(120deg,#FFF6EC 0%,#FBE9D4 100%)!important}
+.strip b{color:#C2410C}
+.card,.pc,.item,.chip{background:#fff;color:#111}
+.sec.alt .card{background:#FFF6EC}
+.chip.on{background:#FFF6EC}
+.steps b,th,td:first-child,.cs,.tog button{color:#111}
+.tog button[aria-pressed=true]{color:#120700}
+input,textarea,select,input[type=text],input[type=email],input[type=tel]{background:#fff;color:#111}
+.btn.g{color:#111}
+.err{color:#b00020}
+.dk{background:#111;color:#fff}
+.dk .eyebrow{color:#ff9a3d}
+.dk p{color:#ddd}
+.tier{background:#fff;border:2px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.tier.top{background:#111;color:#fff;border-color:#ff7a00}
+.tier.top p{color:#ddd}
+.tier small{color:#C2410C;font-weight:700;letter-spacing:.08em}
+.tier.top small{color:#ff9a3d}
+.tier h3{font-size:30px}
+.tiers,.why{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.why{grid-template-columns:repeat(4,1fr)}
+.why div{border-top:4px solid #ff7a00;padding-top:14px}.why h3{font-size:22px;margin-bottom:6px}
+@media(max-width:980px){.tiers{grid-template-columns:1fr}.why{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.why{grid-template-columns:1fr}}
